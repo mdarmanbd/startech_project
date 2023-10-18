@@ -123,7 +123,7 @@ const sideBarMonitor = () =>{
         </div>
     </nav>
   </section>
-  <div class="w-full flex">
+  <div class="w-full flex bg-gray-100">
     <div v-if="sideBar" class="w-1/2  h-screen">
         <div class="bg-white p-1">
             <div class="w-full px-1 border-b pb-1">
@@ -186,11 +186,18 @@ const sideBarMonitor = () =>{
            
         </div>
     </div>
-    <div :class="{'bg-slate-400 opacity-25':sideBar, 'w-full':!sideBar}" class="w-full bg-gray-100">
+    <div :class="{'bg-slate-400 opacity-25':sideBar, 'w-full':!sideBar}" class="w-full !bg-gray-100">
         <!--slider start-->
         <div class="w-full ">
             <Carousel></Carousel>
-            
+            <div class="w-full bg-gray-100 my-5 px-5">
+                <marquee class="text-gray-700 bg-white py-2 rounded-full text-base font-normal">18th October Wednesday, our all outlets are open except Pragati Sharani & Uttara Syed Grand Center outlets. Additionally, our online activities are open and operational.</marquee>
+            </div>
+
+
+
+
+
         </div>
        
        

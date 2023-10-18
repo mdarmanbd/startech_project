@@ -9,7 +9,8 @@ export default {
   theme: {
     extend: {
       colors:{
-        deepBlue:'#081621'
+        deepBlue:'#081621',
+        creamBrulee:'#ffe8a1',
       },
       fontSize:{
         15:'15px'
