@@ -1,13 +1,19 @@
 <script setup>
-import Home from './components/Home.vue';
-
-
-
+import MasterLayout from './components/MasterLayout.vue';
 </script>
 
 <template>
-  <Home/>
+<section class="w-full">
+  <div class="">
+    <MasterLayout></MasterLayout>
+  </div>
+  
+    <RouterView></RouterView>
+  
 
+  
+</section>
+  
   
 
 </template>
