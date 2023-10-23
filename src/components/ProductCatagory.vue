@@ -1,37 +1,101 @@
 <script setup>
-import {ref,reactive} from 'vue'
-import {onBeforeMount} from 'vue'
 
-const products = ref([])
-
-onBeforeMount(()=>{
-    fetch('https://dummyjson.com/products?limit=16')
-    .then(res => res.json())
-    .then(data =>{
-        products.value = data.products
-    });
-})
 
 </script>
 
 <template>
-    <div class="text-center bg-gray-100 w-full">
-        <div class="py-3">
-            <div class="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-8 xl:grid-cols-8 gap-3 sm:gap-3 md:gap-5 lg:gap-3 xl:gap-3">
-                <div v-for="(product,index) in products" :key="product.id" class=" bg-white rounded text-center overflow-hidden">
-                    <div class="flex flex-col h-full">
-                        <div class="flex-grow">
-                           <RouterLink :to="`/products/${product.id}`" ><img :src="product.thumbnail" :alt="product.title" class="w-full p-0 sm:p-0 md:p-0 lg:p-3 xl:p-3"></RouterLink> 
-                        </div>
-                        <div class="mt-auto">
-                           <RouterLink :to="`/products/${product.id}`"><p class="text-black font-normal text-sm sm:text-sm md:text-sm lg:text-base xl:text-base pb-2 hover:text-orange-600">{{ product.brand }}</p></RouterLink>
-                        </div>
+    <section class="bg-gray-100 w-full">
+        <div class="pt-3">
+            <div class="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 xl:grid-cols-8 lg:grid-cols-8 gap-3">
+                <RouterLink to="/drone">
+                    <div class="bg-white w-full text-center rounded py-3">
+                        <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/drone-48x48.png" alt="dron.jpg">
+                        <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Drone</p>
                     </div>
+                </RouterLink>
+                <RouterLink to="/gimbal">
+                    <div class="bg-white w-full text-center rounded py-3">
+                        <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/gimbal-48x48.png" alt="dron.jpg">
+                        <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Gimbal</p>
+                    </div>
+                </RouterLink>
+                <RouterLink to="battery">
+                    <div class="bg-white w-full text-center rounded py-3">
+                        <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/laptop-battery-01-48x48.png" alt="dron.jpg">
+                        <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Battery for Laptop</p>
+                    </div>
+                </RouterLink>
+                <RouterLink to="tv">
+                    <div class="bg-white w-full text-center rounded py-3">
+                        <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/tv-48x48.png" alt="dron.jpg">
+                        <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">TV</p>
+                    </div>
+                </RouterLink>
+                <RouterLink to="mobile">
+                    <div class="bg-white w-full text-center rounded py-3">
+                        <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/mobile-phone-48x48.png" alt="dron.jpg">
+                        <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Portable Power Station</p>
+                    </div>
+                </RouterLink>
+                <RouterLink to="portable">
+                    <div class="bg-white w-full text-center rounded py-3">
+                        <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/vr-48x48.png" alt="dron.jpg">
+                        <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">VR(Virtual Reality)</p>
+                    </div>
+                </RouterLink>
+                <RouterLink to="vr">
+                    <div class="bg-white w-full text-center rounded py-3">
+                        <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/powerstation-48x48.png" alt="dron.jpg">
+                        <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Smart Watch</p>
+                    </div>
+                </RouterLink>
+                <RouterLink to="smartWatch">
+                    <div class="bg-white w-full text-center rounded py-3">
+                        <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/smart-watch-48x48.png" alt="dron.jpg">
+                        <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Smart Watch</p>
+                    </div>
+                </RouterLink>
+               
+            </div>
+        </div>
+
+        <div class="pt-3">
+            <div class="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 xl:grid-cols-8 lg:grid-cols-8 gap-3">
+                <div class="bg-white w-full text-center rounded py-3 hover:text-orange-500">
+                    <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/action-camera-48x48.png" alt="dron.jpg">
+                    <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Action Camera</p>
+                </div>
+                <div class="bg-white w-full text-center rounded py-3">
+                    <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/gpu-48x48.png" alt="dron.jpg">
+                    <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Graphics Card</p>
+                </div>
+                <div class="bg-white w-full text-center rounded py-3">
+                    <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/printer-48x48.png" alt="dron.jpg">
+                    <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Printer</p>
+                </div>
+                <div class="bg-white w-full text-center rounded py-3">
+                    <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/headphone-48x48.png" alt="dron.jpg">
+                    <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Headphone</p>
+                </div>
+                <div class="bg-white w-full text-center rounded py-3">
+                    <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/earbuds-48x48.png" alt="dron.jpg">
+                    <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Earbuds</p>
+                </div>
+                <div class="bg-white w-full text-center rounded py-3">
+                    <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/bt-speaker-48x48.png" alt="dron.jpg">
+                    <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Bluetooth speakers</p>
+                </div>
+                <div class="bg-white w-full text-center rounded py-3">
+                    <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/cc-camera-48x48.png" alt="dron.jpg">
+                    <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">CC Camera</p>
+                </div>
+                <div class="bg-white w-full text-center rounded py-3">
+                    <img class="w-3/5 mx-auto px-3" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/gaming-console-48x48.png" alt="dron.jpg">
+                    <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Gaming Console</p>
                 </div>
             </div>
         </div>
-        
-    </div>
+    </section>
 
 </template>
 

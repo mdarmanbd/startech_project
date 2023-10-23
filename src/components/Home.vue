@@ -5,8 +5,6 @@ import ProductCatagory from '../components/ProductCatagory.vue';
 import {authStore,sideBar} from '../store/store';
 
 const sideBarTwo = sideBar.value
-console.log(sideBarTwo)
-console.log('home')
 
 </script>
 
