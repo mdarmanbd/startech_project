@@ -61,38 +61,54 @@
 
         <div class="pt-3">
             <div class="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 xl:grid-cols-8 lg:grid-cols-8 gap-3">
-                <div class="bg-white w-full text-center rounded py-3 hover:text-orange-500">
-                    <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/action-camera-48x48.png" alt="dron.jpg">
-                    <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Action Camera</p>
-                </div>
-                <div class="bg-white w-full text-center rounded py-3">
-                    <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/gpu-48x48.png" alt="dron.jpg">
-                    <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Graphics Card</p>
-                </div>
-                <div class="bg-white w-full text-center rounded py-3">
-                    <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/printer-48x48.png" alt="dron.jpg">
-                    <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Printer</p>
-                </div>
-                <div class="bg-white w-full text-center rounded py-3">
-                    <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/headphone-48x48.png" alt="dron.jpg">
-                    <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Headphone</p>
-                </div>
-                <div class="bg-white w-full text-center rounded py-3">
-                    <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/earbuds-48x48.png" alt="dron.jpg">
-                    <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Earbuds</p>
-                </div>
-                <div class="bg-white w-full text-center rounded py-3">
-                    <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/bt-speaker-48x48.png" alt="dron.jpg">
-                    <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Bluetooth speakers</p>
-                </div>
-                <div class="bg-white w-full text-center rounded py-3">
-                    <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/cc-camera-48x48.png" alt="dron.jpg">
-                    <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">CC Camera</p>
-                </div>
-                <div class="bg-white w-full text-center rounded py-3">
-                    <img class="w-3/5 mx-auto px-3" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/gaming-console-48x48.png" alt="dron.jpg">
-                    <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Gaming Console</p>
-                </div>
+                <RouterLink to="/actionCamera">
+                    <div class="bg-white w-full text-center rounded py-3 hover:text-orange-500">
+                        <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/action-camera-48x48.png" alt="dron.jpg">
+                        <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Action Camera</p>
+                    </div>
+                </RouterLink>
+                <RouterLink to="/graphics">
+                    <div class="bg-white w-full text-center rounded py-3">
+                        <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/gpu-48x48.png" alt="dron.jpg">
+                        <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Graphics Card</p>
+                    </div>
+                </RouterLink>
+                <RouterLink to="/printer">
+                    <div class="bg-white w-full text-center rounded py-3">
+                        <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/printer-48x48.png" alt="dron.jpg">
+                        <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Printer</p>
+                    </div>
+                </RouterLink>
+                <RouterLink to="/headPhone">
+                    <div class="bg-white w-full text-center rounded py-3">
+                        <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/headphone-48x48.png" alt="dron.jpg">
+                        <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Headphone</p>
+                    </div>
+                </RouterLink>
+                <RouterLink to="/earbuds">
+                    <div class="bg-white w-full text-center rounded py-3">
+                        <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/earbuds-48x48.png" alt="dron.jpg">
+                        <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Earbuds</p>
+                    </div>
+                </RouterLink>
+                <RouterLink to="/blutooth">
+                    <div class="bg-white w-full text-center rounded py-3">
+                        <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/bt-speaker-48x48.png" alt="dron.jpg">
+                        <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Bluetooth speakers</p>
+                    </div>
+                </RouterLink>
+                <RouterLink to="ccCamera">
+                    <div class="bg-white w-full text-center rounded py-3">
+                        <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/cc-camera-48x48.png" alt="dron.jpg">
+                        <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">CC Camera</p>
+                    </div>
+                </RouterLink>
+                <RouterLink to="/gaming">
+                    <div class="bg-white w-full text-center rounded py-3">
+                        <img class="w-3/5 mx-auto px-3" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/gaming-console-48x48.png" alt="dron.jpg">
+                        <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Gaming Console</p>
+                    </div>
+                </RouterLink>
             </div>
         </div>
     </section>
