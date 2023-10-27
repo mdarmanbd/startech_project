@@ -11,6 +11,8 @@ export default {
       colors:{
         deepBlue:'#081621',
         creamBrulee:'#ffe8a1',
+        deepLightBlue:'#01132d',
+        
       },
       fontSize:{
         15:'15px'

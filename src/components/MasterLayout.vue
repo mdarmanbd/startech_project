@@ -1,6 +1,7 @@
 <script setup>
 import{ref} from 'vue'
 import ReaponsiveSideBar from '../components/ReaponsiveSideBar.vue';
+import Cart from '../components/Cart.vue';
 
 let sideBar = ref(false)
 const navThreeBar = () =>{
@@ -103,7 +104,9 @@ const navThreeBar = () =>{
   </section>
   <!--responsive-->
   <ReaponsiveSideBar v-model="sideBar"></ReaponsiveSideBar>
-  
+  <!--cart componen-->
+  <Cart></Cart>
+
 </template>
 
 <style scoped>

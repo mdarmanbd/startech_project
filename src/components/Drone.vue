@@ -1,5 +1,6 @@
 <script setup>
 import {ref,reactive,onBeforeMount} from 'vue'
+import {cartStore} from '../store/cart'
 import axios from 'axios'
 
 const products = ref([])
@@ -60,6 +61,9 @@ onBeforeMount(()=>{
                             </select>
                         </div>
                     </div>
+
+                    <p>{{ cartStore.items }}</p>
+
                     <div class="grid grid-cols-4 gap-3 px-3">
                         <div v-for="(product,index) in products" :key="product.id" class="bg-white w-full py-3">
                             <RouterLink :to="`/drone/${product.id}`">
@@ -74,7 +78,7 @@ onBeforeMount(()=>{
                             
                             <div class="text-center px-3">
                                 <p class="text-center pb-1 pt-3 text-orange-500 text-lg font-semibold">{{ product.price }} $</p>
-                                <button class="w-full bg-blue-100 rounded text-center pb-2 p-1 text-blue-600 font-medium text-base hover:bg-blue-200">Add to card</button>
+                                <button @click="cartStore.addItem(product)" class="w-full bg-blue-100 rounded text-center pb-2 p-1 text-blue-600 font-medium text-base hover:bg-blue-200">Add to card</button>
                             </div>
                         </div>
 

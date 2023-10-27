@@ -1,0 +1,39 @@
+<script setup>
+import{ref,reactive} from 'vue'
+import {cartStore} from '../store/cart'
+
+const cartShow = ref(false)
+
+const cart = () => {
+    cartShow.value = !cartShow.value
+}
+
+</script>
+
+<template>
+    <section>
+        <div class="relative">
+            <div @click="cart" class="fixed cursor-pointer bg-blue-950 bottom-32 w-16 right-10 h-auto rounded-lg pb-3 z-10">
+                <img src="../assets/e-commerch.svg" class="w-full m-auto p-3">
+                <div class="absolute -bottom-1 left-4 ">
+                    <p class="pb-2 text-base font-normal text-center text-white">Cart</p> 
+                </div>
+                <div class="bg-orange-500 w-6 rounded-full absolute -top-2 -right-1">
+                    <p class="text-white text-center text-lg font-bold">{{ cartStore.totalCartItems }}</p> 
+                </div>
+            </div>
+            <!--cart side bar--->
+            <div v-if="cartShow" class="fixed w-60 bg-white right-0 top-0 h-screen z-10">
+                <div class="w-full bg-deepLightBlue flex justify-between px-3 py-2 ">
+                    <p class="uppercase text-base text-white font-semibold">Your Cart</p>
+                    <img @click="cart" src="../assets/Close.svg" class="cursor-pointer">
+                </div>
+                <div v-for="item in cartStore.items" class="px-3 py-2">
+                    <p>price: {{ item.product.price }}</p>
+                </div>
+                
+            </div>
+        </div> 
+    </section>
+
+</template>
