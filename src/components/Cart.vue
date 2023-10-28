@@ -8,6 +8,17 @@ const cart = () => {
     cartShow.value = !cartShow.value
 }
 
+function deletItem(item) {
+  const cartItems = this.cartStore.items;
+    console.log(cartItems.indexOf(item.product.id))
+  const index = cartItems.indexOf(item);
+  if (index !== -1) {
+    cartItems.splice(index, 1);
+  }
+
+}
+
+
 </script>
 
 <template>
@@ -28,8 +39,21 @@ const cart = () => {
                     <p class="uppercase text-base text-white font-semibold">Your Cart</p>
                     <img @click="cart" src="../assets/Close.svg" class="cursor-pointer">
                 </div>
-                <div v-for="item in cartStore.items" class="px-3 py-2">
-                    <p>price: {{ item.product.price }}</p>
+                <div v-for="item in cartStore.items" :key="item.id" class="py-2 border-b">
+                    <div class="flex justify-around gap-2 leading-4 px-1 hover:bg-slate-100">
+                        <img :src="item.product.thumbnail" class="w-10 h-auto">
+                        <p class="text-sm font-normal text-black">{{ item.product.description }}</p>
+
+                        <div @click="deletItem(item)" class="flex flex-col my-auto cursor-pointer">
+                            <img src="../assets/Delet.svg">
+                        </div>
+                    </div>
+                    <div class="px-1 flex justify-center py-1">
+                        <p class="text-sm">{{ item.product.price }} * </p>
+                        <p class="text-sm"> {{ item.quantity }} =</p>
+                        <p class="text-sm">{{ item.product.price * item.quantity }}</p>
+                    </div>
+                    
                 </div>
                 
             </div>
