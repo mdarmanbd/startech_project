@@ -8,15 +8,11 @@ const cart = () => {
     cartShow.value = !cartShow.value
 }
 
-function deletItem(item) {
-  const cartItems = this.cartStore.items;
-    console.log(cartItems.indexOf(item.product.id))
-  const index = cartItems.indexOf(item);
-  if (index !== -1) {
-    cartItems.splice(index, 1);
-  }
 
-}
+// function deletItem(item) { 
+//   console.log(item) // problem , how i delet my item
+// }
+
 
 
 </script>
@@ -34,7 +30,7 @@ function deletItem(item) {
                 </div>
             </div>
             <!--cart side bar--->
-            <div v-if="cartShow" class="fixed w-60 bg-white right-0 top-0 h-screen z-10">
+            <div v-if="cartShow" class="fixed w-60 bg-white right-0 top-0 h-screen z-10 shadow-lg">
                 <div class="w-full bg-deepLightBlue flex justify-between px-3 py-2 ">
                     <p class="uppercase text-base text-white font-semibold">Your Cart</p>
                     <img @click="cart" src="../assets/Close.svg" class="cursor-pointer">
@@ -44,18 +40,40 @@ function deletItem(item) {
                         <img :src="item.product.thumbnail" class="w-10 h-auto">
                         <p class="text-sm font-normal text-black">{{ item.product.description }}</p>
 
-                        <div @click="deletItem(item)" class="flex flex-col my-auto cursor-pointer">
+                        <div @click="cartStore.deletItem(item)" class="flex flex-col my-auto cursor-pointer">
                             <img src="../assets/Delet.svg">
                         </div>
                     </div>
-                    <div class="px-1 flex justify-center py-1">
+                    <div class="px-1 flex justify-center gap-3 py-1">
                         <p class="text-sm">{{ item.product.price }} * </p>
                         <p class="text-sm"> {{ item.quantity }} =</p>
                         <p class="text-sm">{{ item.product.price * item.quantity }}</p>
                     </div>
                     
                 </div>
-                
+                <div class="bg-gray-100 w-full py-2">
+                    <div class="flex justify-between gap-3 px-3">
+                        <input type="text" class="bg-white px-1 w-full border-0 outline-0 focus:outline-none" placeholder="Promo Code">
+                        <button class="bg-blue-700 text-center px-2 text-white text-base">Apply</button>
+                    </div>
+                </div>
+                <div class="bg-white w-full">
+                    <div class="flex justify-around px-2 border-b py-2">
+                        <p class="text-gray-600 text-base font-semibold">Sub-Total</p>
+                        <p class="text-base font-semibold text-black">{{ cartStore.totalPrice }}</p>
+                    </div>
+                    <div class="flex justify-around px-2 border-b py-2">
+                        <p class="text-gray-600 text-base font-semibold">Total</p>
+                        <p class="text-base font-semibold text-black">{{ cartStore.totalPrice }}</p>
+                    </div>
+                    <div class="flex justify-around px-2 py-2">
+                        <RouterLink to="/viewCart">
+                            <button @click="cart" class="cursor-pointer bg-blue-700 text-center text-white text-sm font-normal px-3 py-1 hover:bg-blue-600">Show cart view</button>
+                        </RouterLink>
+                        
+                        <button class="bg-orange-700 text-center text-white text-base font-normal px-3 py-1 hover:bg-orange-600">Checkout</button>
+                    </div>
+                </div>
             </div>
         </div> 
     </section>

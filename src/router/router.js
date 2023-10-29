@@ -18,6 +18,7 @@ import Earbuds from '../components/Earbuds.vue'
 import Blutooth from '../components/Bluetooth.vue'
 import CcCamera from '../components/CcCamera.vue'
 import Gaming from '../components/Gaming.vue'
+import ViewCart from '../components/ViewCart.vue'
 
 const routes = [
     {
@@ -43,6 +44,10 @@ const routes = [
     {
         path:'/tv',
         component:Tv
+    },
+    {
+        path:'/viewCart',
+        component:ViewCart
     },
     {
         path:'/mobile',

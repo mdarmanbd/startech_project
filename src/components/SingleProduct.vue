@@ -1,7 +1,9 @@
 <script setup>
 import{ref,reactive, onBeforeMount} from 'vue'
 import{useRoute} from 'vue-router'
+import { cartStore } from '../store/cart';
 import axios from 'axios'
+
 
 const route = useRoute()
 const routeId = route.params.id
@@ -55,7 +57,7 @@ function productImages(productImg){
                 </div>
                 <div class="text-left pt-10">
                     <p class="pb-1 text-orange-500 text-lg font-semibold">Product price : {{ product.price }} $</p>
-                    <button class="w-40 bg-blue-100 rounded text-center pb-2 p-1 text-blue-600 font-medium text-base hover:bg-blue-200">Add to card</button>
+                    <button @click="cartStore.addItem(product)" class="w-40 bg-blue-100 rounded text-center pb-2 p-1 text-blue-600 font-medium text-base hover:bg-blue-200">Add to card</button>
                 </div>
             </div>
         </div>
