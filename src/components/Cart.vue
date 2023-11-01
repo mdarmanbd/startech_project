@@ -40,7 +40,7 @@ const cart = () => {
                         <img :src="item.product.thumbnail" class="w-10 h-auto">
                         <p class="text-sm font-normal text-black">{{ item.product.description }}</p>
 
-                        <div @click="cartStore.deletItem(item)" class="flex flex-col my-auto cursor-pointer">
+                        <div @click="cartStore.deletItem(item.product.id)" class="flex flex-col my-auto cursor-pointer">
                             <img src="../assets/Delet.svg">
                         </div>
                     </div>

@@ -10,14 +10,9 @@ const cartStore = reactive({
         }
         return total
     }),
-    deletItem(item){
-        const selectProduct = item.product
-      const cartItem =  cartStore.items
-      if( selectProduct in cartItem){
-        console.log('item have')
-      }else{
-        console.log('do not have')
-      }
+    deletItem(product){
+        delete this.items[product]
+      
     },
     totalPrice:computed(()=>{
         let total = 0
