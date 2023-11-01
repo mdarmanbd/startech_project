@@ -6,8 +6,9 @@ const cartStore = reactive({
     totalCartItems:computed(()=>{
         let total = 0
         for(let id in cartStore.items){
-            total += cartStore.items[id].quantity 
+            total += cartStore.items[id].quantity
         }
+        
         return total
     }),
     deletItem(product){
@@ -30,8 +31,20 @@ const cartStore = reactive({
                 quantity : 1
             }
         }
+        this.saveCartInLocalStorage()
+    },
+    emptyCart(){
+        this.items= {}
+        this.saveCartInLocalStorage()
+    },
+
+    saveCartInLocalStorage(){
+        localStorage.setItem('cart',JSON.stringify(this.items))
+    },
+    getCartFromLocalStorage(){
+        this.items = JSON.parse(localStorage.getItem('cart'))
     }
     
 })
-
+cartStore.getCartFromLocalStorage()
 export{cartStore}
