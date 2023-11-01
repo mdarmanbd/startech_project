@@ -2,9 +2,15 @@
     import {ref,reactive} from 'vue'
     import { cartStore } from '../store/cart';
 
-    if(cartStore.items.length == 0 ){
-        console.log('hello')
-    }
+
+ const allItemsObject = cartStore.items
+
+ const show = ref(true)
+
+ // var size = Object.keys(this.items).length;
+console.log(Object.keys(allItemsObject).length)
+
+
     
 </script>
 

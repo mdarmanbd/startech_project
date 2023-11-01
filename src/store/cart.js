@@ -13,7 +13,6 @@ const cartStore = reactive({
     }),
     deletItem(product){
         delete this.items[product]
-      
     },
     totalPrice:computed(()=>{
         let total = 0
