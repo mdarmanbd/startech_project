@@ -1,6 +1,9 @@
 
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../components/Home.vue'
+import LogIn from '../components/Login.vue'
+import Register from '../components/Register.vue'
+import Profile from '../components/Profile.vue'
 import Drone from '../components/Drone.vue'
 import SingleProduce from '../components/SingleProduct.vue'
 import Gimbal from '../components/Gimbal.vue'
@@ -25,6 +28,19 @@ const routes = [
         path: '/',
         component:Home
     },
+    {
+        path: '/logIn',
+        component:LogIn
+    },
+    {
+        path: '/register',
+        component:Register
+    },
+    {
+        path: '/profile',
+        component:Profile
+    },
+    
     {
         path:'/drone',
         component:Drone

@@ -2,6 +2,7 @@
 import{ref} from 'vue'
 import ReaponsiveSideBar from '../components/ReaponsiveSideBar.vue';
 import Cart from '../components/Cart.vue';
+import { logIN } from '../store/login';
 
 let sideBar = ref(false)
 const navThreeBar = () =>{
@@ -90,7 +91,16 @@ const navThreeBar = () =>{
                         <div class="">
                             <p class="text-white font-normal text-base leading-none">Account 
                                 <br>
-                                <small class="text-gray-500 text-sm"><span class="hover:text-gray-200 cursor-pointer">Register</span> or <span class="hover:text-gray-200 cursor-pointer">Login</span></small>
+                                <small v-if="logIN.commonUser" class="text-gray-500 text-sm">
+                                    <RouterLink to="/register"><span class="hover:text-gray-200 cursor-pointer">Register</span> </RouterLink>
+                                    or
+                                    <RouterLink to="/login"><span class="hover:text-gray-200 cursor-pointer">Login</span></RouterLink>
+                                </small>
+                                <small v-if="logIN.registerUser" class="text-gray-500 text-sm">
+                                    <RouterLink to="/profile"><span class="hover:text-gray-200 cursor-pointer">Profile</span> </RouterLink>
+                                    or
+                                    <span @click="logIN.logOut" class="hover:text-gray-200 cursor-pointer">LogOut</span>
+                                </small>
                             </p>
                         </div>
                     </div>
