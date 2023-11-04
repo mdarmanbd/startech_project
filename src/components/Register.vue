@@ -1,11 +1,14 @@
 <script setup>
+import ProfileVue from '../components/Profile.vue';
 import {ref,reactive} from 'vue'
 import { logIN } from '../store/login'
-import ProfileVue from '../components/Profile.vue'
+
 
 const newEmail = ref('')
 const oldPassword = ref('')
 const confarmPassword = ref('')
+const firstName = ref('')
+const lastName = ref('')
 
 const userProfile = reactive({
     firstName : 'fsdf',
@@ -40,15 +43,14 @@ const userProfile = reactive({
                     <div class="">
                         <p class="text-black font-normal text-lg">First Name</p>
                         <input v-model="userProfile.firstName" type="text" class="w-full border border-gray-400 rounded outline-none pl-1 text-base">
-                        
                     </div>
                     <div class="">
                         <p class="text-black font-normal text-lg">Last Name</p>
                         <input v-model="userProfile.lastName" type="text" class="w-full border border-gray-400 rounded outline-none pl-1 text-base">
-                        
                     </div>
-                  
+                    <ProfileVue :userProfile="userProfile"></ProfileVue>
                 </div>
+                
                 <div class="pb-2">
                     <p class="text-black font-normal text-lg">Email / Phone</p>
                     <input v-model="newEmail" type="email" placeholder="example@.com" class="w-full border border-gray-400 rounded outline-none pl-1 text-base">
