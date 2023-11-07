@@ -1,19 +1,20 @@
 <script setup>
 import ProfileVue from '../components/Profile.vue';
 import {ref,reactive} from 'vue'
-import { logIN } from '../store/login'
+// import { logIN } from '../store/login'
+import {register} from '../store/register'
+
 
 
 const newEmail = ref('')
-const oldPassword = ref('')
+const newPassword = ref('')
 const confarmPassword = ref('')
 const firstName = ref('')
 const lastName = ref('')
 
-const userProfile = reactive({
-    firstName : 'fsdf',
-    lastName : 'fdsf'
-})
+
+
+
 
 </script>
 
@@ -42,32 +43,31 @@ const userProfile = reactive({
                 <div class="flex gap-1 justify-between pb-2 pt-3">
                     <div class="">
                         <p class="text-black font-normal text-lg">First Name</p>
-                        <input v-model="userProfile.firstName" type="text" class="w-full border border-gray-400 rounded outline-none pl-1 text-base">
+                        <input v-model="firstName" type="text" class="w-full border border-gray-400 rounded outline-none pl-1 text-base">
                     </div>
                     <div class="">
                         <p class="text-black font-normal text-lg">Last Name</p>
-                        <input v-model="userProfile.lastName" type="text" class="w-full border border-gray-400 rounded outline-none pl-1 text-base">
+                        <input v-model="lastName" type="text" class="w-full border border-gray-400 rounded outline-none pl-1 text-base">
                     </div>
-                    <ProfileVue :userProfile="userProfile"></ProfileVue>
                 </div>
                 
                 <div class="pb-2">
                     <p class="text-black font-normal text-lg">Email / Phone</p>
                     <input v-model="newEmail" type="email" placeholder="example@.com" class="w-full border border-gray-400 rounded outline-none pl-1 text-base">
-                    <small v-if="logIN.wrongEmail" class="text-red-500">email is not match</small>
+                    <small v-if="register.wrongEmail" class="text-red-500">email is not match</small>
                 </div>
                 <div class="pb-2">
-                    <p class="text-black font-normal text-lg">Old Password</p>
-                    <input v-model="oldPassword" type="text" class="w-full border border-gray-400 rounded outline-none pl-1 text-base">
+                    <p class="text-black font-normal text-lg">New Password</p>
+                    <input v-model="newPassword" type="text" class="w-full border border-gray-400 rounded outline-none pl-1 text-base">
                     
                 </div>
                 <div class="pb-2">
                     <p class="text-black font-normal text-lg">Confarm Password</p>
                     <input v-model="confarmPassword" type="text" class="w-full border border-gray-400 rounded outline-none pl-1 text-base">
-                    <small v-if="logIN.wrongEmail" class="text-red-500">password is not match</small>
+                    <small v-if="register.wrongEmail" class="text-red-500">password is not match</small>
                 </div>
                 <div>
-                   <button @click="logIN.register(newEmail , oldPassword , confarmPassword)" class="bg-blue-800 text-white font-mono text-lg rounded px-2">
+                   <button @click="register.register(newEmail , newPassword , confarmPassword,firstName,lastName)" class="bg-blue-800 text-white font-mono text-lg rounded px-2">
                     Registration
                    </button> 
                 </div>

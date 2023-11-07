@@ -3,33 +3,7 @@ import{ref,watch} from 'vue'
 import{logIN} from '../store/login'
 import {useRoute,useRouter} from 'vue-router'
 
-const router = useRouter()
-const email = ref('')
-const phoneNumber = ref(0)
-const password = ref('')
-const wrongEmail = ref(false)
-const wrongPassword = ref(false)
 
-watch(email,(userPhoneUnber)=>{
-    phoneNumber.value = Number(userPhoneUnber)
-})
-
-const loginButton = () => {
-   
-   if(email.value.length < 3 || email.value.indexOf('@') == -1){
-        wrongEmail.value = true
-   }
-   else if(password.value.toLocaleLowerCase() == 'password' || password.value == ''){
-        wrongPassword.value = true
-   }
-   else{
-        wrongEmail.value = false
-        wrongPassword.value = false
-        logIN.login(email.value,password.value)
-        router.push('/register')
-   }
-  
-}
 
 
 </script>
@@ -54,15 +28,15 @@ const loginButton = () => {
                 <div class="pb-2">
                     <p class="text-black text-lg font-normal">Phone / Email</p>
                     <input v-model="email"  type="text" placeholder="example@.com" class="w-full border border-gray-400 rounded outline-none pl-1 text-base font-normal">
-                    <small v-if="wrongEmail" class="text-red-500">email length is too short and also requered the '@'</small>
+                    <small v-if="logIN.wrongEmail" class="text-red-500">email length is too short and also requered the '@'</small>
                 </div>
                 <div class="pb-2">
                     <p class="text-black text-lg font-normal">Password</p>
                     <input v-model="password" type="text" class="w-full border border-gray-400 rounded outline-none pl-1 text-base font-normal">
-                    <small v-if="wrongPassword" class="text-red-500">password is not a password</small>
+                    <small v-if="logIN.wrongPassword" class="text-red-500">password is not a password</small>
                 </div>
                 <div class="w-full">
-                   <button @click="loginButton" class="bg-blue-700 text-white font-mono text-lg rounded py-2 w-full">
+                   <button @click="logIN.loginButton(email,password)" class="bg-blue-700 text-white font-mono text-lg rounded py-2 w-full">
                     Login
                    </button> 
                 </div>

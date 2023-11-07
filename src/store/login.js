@@ -1,42 +1,51 @@
 import{ref,reactive} from 'vue'
 import router from '../router/router'
+import { register } from './register'
 
 const logIN = reactive({
 
-    wrongEmail : false,
-    wrongPassword : false,
-    commonUser : true,
-    registerUser : false,
 
-   login(emailValue,passwordValue){
-        localStorage.setItem('email',JSON.stringify(emailValue))
-        localStorage.setItem('password', JSON.stringify(passwordValue))
-   },
+          wrongEmail : false,
+          wrongPassword : false,
+          registerUser : false,
+          commonUser : true,
+    
 
-   register(newEmailValue,oldPasswordValue,confarmPasswordValue){
-        const localStorageEmail = localStorage.getItem('email')
-        const localStoragePassword = localStorage.getItem('password')
+   loginButton(emailValue,passwordValue){
+   
 
-        if(JSON.stringify(newEmailValue) === localStorageEmail && JSON.stringify(oldPasswordValue) === localStoragePassword && JSON.stringify(confarmPasswordValue) === localStoragePassword){
-            this.wrongEmail = false
-            this.commonUser = false
-            this.registerUser = true
-            router.push('/profile')
-        }
-        else{
-           this.wrongEmail = true
-           
-        }
-        
-   },
+        const oldEmail = localStorage.getItem('email')
+        const oldPassword = localStorage.getItem('confarmPassword')
+
+          if(JSON.parse(oldEmail) == emailValue && JSON.parse(oldPassword) == passwordValue){
+               localStorage.setItem('token','true')
+               this.wrongEmail = false
+               this.wrongPassword = false
+               this.registerUser = true
+               this.commonUser = false
+               router.push('/profile')
+             
+          }else{
+               this.wrongEmail = true
+               this.wrongPassword = true
+          }
+
+     },
+
 
    logOut(){
-        localStorage.setItem('email','{}')
-        localStorage.setItem('password','{}')
-        router.push('/')
-        this.registerUser = false
-        this.commonUser = true
-   }
+          localStorage.removeItem('token')
+          localStorage.removeItem('userFirstName')
+          localStorage.removeItem('userLastName')
+          localStorage.removeItem('email')
+          localStorage.removeItem('newPassword')
+          localStorage.removeItem('confarmPassword')
+          router.push('/register')
+          this.commonUser = true
+          this.registerUser = false
+     }
+
+  
     
 })
 

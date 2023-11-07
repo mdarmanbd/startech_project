@@ -1,7 +1,7 @@
 
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../components/Home.vue'
-import LogIn from '../components/Login.vue'
+import LogVue from '../components/Login.vue'
 import Register from '../components/Register.vue'
 import Profile from '../components/Profile.vue'
 import Drone from '../components/Drone.vue'
@@ -23,6 +23,7 @@ import CcCamera from '../components/CcCamera.vue'
 import Gaming from '../components/Gaming.vue'
 import ViewCart from '../components/ViewCart.vue'
 
+
 const routes = [
     {
         path: '/',
@@ -30,7 +31,7 @@ const routes = [
     },
     {
         path: '/logIn',
-        component:LogIn
+        component:LogVue
     },
     {
         path: '/register',
@@ -38,9 +39,11 @@ const routes = [
     },
     {
         path: '/profile',
-        component:Profile
+        component:Profile,
+        meta:{
+            requiresAuth: true
+        }
     },
-    
     {
         path:'/drone',
         component:Drone
@@ -114,15 +117,30 @@ const routes = [
         component:Gaming
     }
     
-
-    
-   
 ]
+
+
 
 
 const router = createRouter({
     history: createWebHistory(),
     routes
 })
+
+router.beforeEach((to, from, next) => {
+    if (to.meta.requiresAuth) {
+      const token = localStorage.getItem('token');
+      if (token) {
+        next();
+      } else {
+        // User is not authenticated, redirect to login
+        next('/login');
+      }
+    } else {
+      // Non-protected route, allow access
+      next();
+    }
+  });
+
 
 export default router

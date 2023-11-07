@@ -3,6 +3,7 @@ import{ref} from 'vue'
 import ReaponsiveSideBar from '../components/ReaponsiveSideBar.vue';
 import Cart from '../components/Cart.vue';
 import { logIN } from '../store/login';
+import {register} from '../store/register';
 
 let sideBar = ref(false)
 const navThreeBar = () =>{

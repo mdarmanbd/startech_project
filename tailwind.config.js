@@ -16,6 +16,9 @@ export default {
       },
       fontSize:{
         15:'15px'
+      },
+      width:{
+        10:'10%'
       }
     },
   },
