@@ -8,7 +8,7 @@
  const show = ref(true)
 
  // var size = Object.keys(this.items).length;
-console.log(Object.keys(allItemsObject).length)
+// console.log(Object.keys(allItemsObject).length)
 
 
     

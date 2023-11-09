@@ -62,8 +62,8 @@ onBeforeMount(()=>{
                         </div>
                     </div>
 
-                    <p>{{ cartStore.items }}</p>
-
+                    <p>{{ cartStore.goll }}</p>
+                   
                     <div class="grid grid-cols-4 gap-3 px-3">
                         <div v-for="(product,index) in products" :key="product.id" class="bg-white w-full py-3">
                             <RouterLink :to="`/drone/${product.id}`">

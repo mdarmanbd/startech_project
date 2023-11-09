@@ -1,10 +1,9 @@
 import{ref,reactive} from 'vue'
 import router from '../router/router'
 import { register } from './register'
+import md5 from 'blueimp-md5'
 
 const logIN = reactive({
-
-
           wrongEmail : false,
           wrongPassword : false,
           registerUser : false,
@@ -12,12 +11,10 @@ const logIN = reactive({
     
 
    loginButton(emailValue,passwordValue){
-   
-
         const oldEmail = localStorage.getItem('email')
         const oldPassword = localStorage.getItem('confarmPassword')
 
-          if(JSON.parse(oldEmail) == emailValue && JSON.parse(oldPassword) == passwordValue){
+          if(JSON.parse(oldEmail) == emailValue && JSON.parse(oldPassword) == md5(passwordValue)){
                localStorage.setItem('token','true')
                this.wrongEmail = false
                this.wrongPassword = false
@@ -32,7 +29,6 @@ const logIN = reactive({
 
      },
 
-
    logOut(){
           localStorage.removeItem('token')
           localStorage.removeItem('userFirstName')
@@ -45,8 +41,6 @@ const logIN = reactive({
           this.registerUser = false
      }
 
-  
-    
 })
 
 export{logIN}

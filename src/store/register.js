@@ -1,5 +1,6 @@
 import{ref,reactive} from 'vue'
 import router from '../router/router'
+import md5 from 'blueimp-md5'
 
 const register = reactive({
 
@@ -12,11 +13,11 @@ const register = reactive({
 
    register(newEmailValue,newPasswordValue,confarmPasswordValue,userFirstName,userLastName){
 
-          if(newPasswordValue === confarmPasswordValue){
+          if( newPasswordValue === confarmPasswordValue){
 
             localStorage.setItem('email',JSON.stringify(newEmailValue))
-            localStorage.setItem('newPassword',JSON.stringify(newPasswordValue))
-            localStorage.setItem('confarmPassword',JSON.stringify(confarmPasswordValue))
+            localStorage.setItem('newPassword',JSON.stringify( md5(newPasswordValue)))
+            localStorage.setItem('confarmPassword',JSON.stringify( md5(confarmPasswordValue)))
             localStorage.setItem('userFirstName',JSON.stringify(userFirstName))
             localStorage.setItem('userLastName',JSON.stringify(userLastName))
             router.push('/logIn')
