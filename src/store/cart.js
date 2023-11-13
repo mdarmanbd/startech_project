@@ -5,10 +5,8 @@ import{ref,reactive,computed} from 'vue'
 const cartStore = reactive({
     items:{},
     addItem(product){   
-        console.log(this.items)
         if( this.items[product.id]){
             this.items[product.id].quantity++
-            console.log(product.id)
         }else{
             this.items[product.id] = {
                 product,

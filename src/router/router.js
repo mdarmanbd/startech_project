@@ -6,6 +6,7 @@ import Register from '../components/Register.vue'
 import Profile from '../components/Profile.vue'
 import Drone from '../components/Drone.vue'
 import SingleProduce from '../components/SingleProduct.vue'
+import CompareItem from '../components/CompareItem.vue'
 import Gimbal from '../components/Gimbal.vue'
 import Battery from '../components/Battery.vue'
 import Tv from '../components/Tv.vue'
@@ -47,6 +48,10 @@ const routes = [
     {
         path:'/drone',
         component:Drone
+    },
+    {
+        path:'/compareItem',
+        component:CompareItem
     },
     {
         path:'/drone/:id',

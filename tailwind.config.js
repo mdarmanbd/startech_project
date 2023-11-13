@@ -12,6 +12,8 @@ export default {
         deepBlue:'#081621',
         creamBrulee:'#ffe8a1',
         deepLightBlue:'#01132d',
+        lightBlack : '#00004b',
+        blackOverLay : "rgba(50,50,50,0.8)",
         
       },
       fontSize:{

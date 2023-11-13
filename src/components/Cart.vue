@@ -1,17 +1,16 @@
 <script setup>
 import{ref,reactive} from 'vue'
 import {cartStore} from '../store/cart'
+import {compare} from '../store/compare'
 
 const cartShow = ref(false)
 
 const cart = () => {
     cartShow.value = !cartShow.value
+    compare.compareShow = false // hide compare component whine cart show
+    
 }
 
-
-// function deletItem(item) { 
-//   console.log(item) // problem , how i delet my item
-// }
 
 
 
