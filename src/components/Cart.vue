@@ -7,7 +7,7 @@ const cartShow = ref(false)
 
 const cart = () => {
     cartShow.value = !cartShow.value
-    compare.compareShow = false // hide compare component whine cart show
+    compare.compareShow = false // hide compare component whene cart show
     
 }
 

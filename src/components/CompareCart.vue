@@ -32,7 +32,16 @@ const CompareClose = () => {
                     <img @click="CompareClose"  src="../assets/Close.svg" class="cursor-pointer ">
                 </div>
                 <div class="h-3/5 bg-green-200 overflow-y-scroll px-2">
-                    <P>Hello world</P>      
+                    <div v-for="compareItem in compare.compareCart" :key="compareItem.id" class="">
+                        <div class="w-full flex justify-around py-1 border-b">
+                            <img :src="compareItem.product.thumbnail" class="w-11 h-10">
+                            <p class="pt-1 text-black text-base font-normal capitalize">{{ compareItem.product.title }}</p>
+                            <img @click="compare.closeCompareItemButton(compareItem.product.id)" src="../assets/Delet.svg" class="w-6 cursor-pointer ">
+                        </div>
+                       
+                    </div>
+                    <P>Hello world</P>
+                   
                 </div>
                     <div class="flex justify-start px-2 py-1 ">          
                         <button  class="cursor-pointer bg-blue-700 text-center text-white text-sm font-normal px-3 py-1 hover:bg-blue-600">Compare</button>

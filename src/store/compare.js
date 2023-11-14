@@ -5,6 +5,7 @@ const compare = reactive({
    compareShow : false,
    PopupShow : false,
 
+   compareCart:{},
    compareItemsPopup:{},
    compareItems:{},
 
@@ -23,17 +24,30 @@ const compare = reactive({
 
     comparePopup(product){
       this.PopupShow = !this.PopupShow
-      this.compareItemsPopup[product.id] = {
-         product,
+       this.compareItemsPopup[product.id] = { product }
+
+      if( this.compareCart[product.id]){
+
+      }else{
+         this.compareCart[product.id] = {
+            product
+         }
       }
-     
    },
+   closeCompareItemButton(compareItemId){
+      delete this.compareCart[compareItemId]
+   },
+   closePopup(){
+      this.PopupShow = !this.PopupShow
+      this.compareItemsPopup = {}
+      
+   },
+
    compareNowButton(item){
       this.PopupShow = false
       this.compareItems = {
          item
       }
-      console.log(item)
       this.compareItemsPopup = {},
       router.push('/compareItem')
    },

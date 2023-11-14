@@ -1,7 +1,7 @@
 <script setup>
 import{ref} from 'vue'
 import ReaponsiveSideBar from '../components/ReaponsiveSideBar.vue';
-import Compare from '../components/Compare.vue';
+import CompareCart from '../components/CompareCart.vue';
 import Cart from '../components/Cart.vue';
 import { logIN } from '../store/login';
 import {register} from '../store/register';
@@ -116,8 +116,9 @@ const navThreeBar = () =>{
   </section>
   <!--responsive-->
   <ReaponsiveSideBar v-model="sideBar"></ReaponsiveSideBar>
-  <!--cart componen-->
-  <Compare></Compare>
+  <!--compare side cart componen-->
+  <CompareCart></CompareCart>
+  <!--wish list cart-->
   <Cart></Cart>
 
 </template>

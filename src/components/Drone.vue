@@ -62,6 +62,7 @@ onBeforeMount(()=>{
                             </select>
                         </div>
                     </div>
+                  
                     <div class="grid grid-cols-4 gap-3 px-3">
                         <div v-for="(product,index) in products" :key="product.id" class="bg-white w-full py-3">
                             <RouterLink :to="`/drone/${product.id}`">
@@ -98,7 +99,7 @@ onBeforeMount(()=>{
             <div class="relative top-1/3 w-1/2 h-48 bg-slate-50 mx-auto rounded opacity-100">
                 <div class="grid grid-cols-1 p-3 w-full">
                     <div class="w-full flex justify-end">
-                        <img @click="compare.comparePopup" src="../assets/Close.svg" class="bg-orange-500 p-1 cursor-pointer rounded hover:bg-orange-400">
+                        <img @click="compare.closePopup" src="../assets/Close.svg" class="bg-orange-500 p-1 cursor-pointer rounded hover:bg-orange-400">
                     </div>
                 </div>
                 <div v-for="item in compare.compareItemsPopup" :key="item.id" class="w-11/12 mx-auto">
