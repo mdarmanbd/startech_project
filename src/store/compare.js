@@ -1,46 +1,54 @@
-import{ref,reactive} from 'vue'
+import{ref,reactive,computed} from 'vue'
 import router from '../router/router'
 
 const compare = reactive({
    compareShow : false,
    PopupShow : false,
+   showCompareButton : false,
 
    compareCart:{},
    compareItemsPopup:{},
    compareItems:{},
-
-   // addItem(product){   
-   //     if( this.items[product.id]){
-   //         this.items[product.id].quantity++
-   //     }else{
-   //         this.items[product.id] = {
-   //             product,
-   //             quantity : 1
-   //         }
-   //     }
-       
-   //     this.saveCartInLocalStorage()
-   // },
+   compareItemCount: 0,
 
     comparePopup(product){
       this.PopupShow = !this.PopupShow
+      this.showCompareButton = true
        this.compareItemsPopup[product.id] = { product }
 
       if( this.compareCart[product.id]){
 
       }else{
-         this.compareCart[product.id] = {
-            product
+         this.compareItemCount++
+         if(this.compareItemCount < 5){
+            this.compareCart[product.id] = {
+               product,
+            }
+         }else{
+            this.compareItemCount = 4
          }
       }
    },
    closeCompareItemButton(compareItemId){
       delete this.compareCart[compareItemId]
+      this.compareItemCount--
+      if(this.compareItemCount == 0){
+         this.showCompareButton = false
+      }
    },
    closePopup(){
       this.PopupShow = !this.PopupShow
       this.compareItemsPopup = {}
       
+   },
+   comapreButton(){
+      router.push('/compareItem')
+   },
+   clearButton(){
+      this.compareCart = {},
+      this.showCompareButton = false,
+      this.compareItemCount = 0
+
    },
 
    compareNowButton(item){
@@ -48,8 +56,8 @@ const compare = reactive({
       this.compareItems = {
          item
       }
-      this.compareItemsPopup = {},
-      router.push('/compareItem')
+      this.compareItemsPopup = {}
+     // router.push('/compareItem')
    },
 
    continueButton(){

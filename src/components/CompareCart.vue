@@ -22,16 +22,16 @@ const CompareClose = () => {
                     <p class="pb-2 text-xs font-normal text-center text-white px-1">Compare</p> 
                 </div>
                 <div class="bg-orange-500 w-6 rounded-full absolute -top-2 -right-1">
-                    <p class="text-white text-center text-lg font-bold">0</p> 
+                    <p class="text-white text-center text-lg font-bold">{{ compare.compareItemCount }}</p> 
                 </div>
             </div>
             <!--compare side bar--->
-            <div v-if="compare.compareShow" class="fixed w-72 bg-white right-0 bottom-56 h-48 z-10 shadow-lg  ">
+            <div v-if="compare.compareShow" class="fixed w-72 bg-white right-0 bottom-56 h-64 z-10 shadow-lg  ">
                 <div class="w-full bg-deepLightBlue flex justify-between px-4 py-2">
                     <p class="uppercase text-base text-white font-semibold">Compare</p>
                     <img @click="CompareClose"  src="../assets/Close.svg" class="cursor-pointer ">
                 </div>
-                <div class="h-3/5 bg-green-200 overflow-y-scroll px-2">
+                <div class="h-3/5 bg-white overflow-y-scroll px-2">
                     <div v-for="compareItem in compare.compareCart" :key="compareItem.id" class="">
                         <div class="w-full flex justify-around py-1 border-b">
                             <img :src="compareItem.product.thumbnail" class="w-11 h-10">
@@ -40,11 +40,10 @@ const CompareClose = () => {
                         </div>
                        
                     </div>
-                    <P>Hello world</P>
-                   
                 </div>
-                    <div class="flex justify-start px-2 py-1 ">          
-                        <button  class="cursor-pointer bg-blue-700 text-center text-white text-sm font-normal px-3 py-1 hover:bg-blue-600">Compare</button>
+                    <div v-if="compare.showCompareButton" class="flex gap-2 justify-start px-2 py-1 ">          
+                        <button @click="compare.comapreButton"  class="cursor-pointer bg-blue-700 text-center text-white text-sm font-normal px-3 py-1 hover:bg-blue-600">Compare</button>
+                        <button @click="compare.clearButton" class="bg-transparent text-black text-base font-normal hover:underline ml-10">Clear</button>
                     </div>
             </div>
         </div> 
