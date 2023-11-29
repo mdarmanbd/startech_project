@@ -27,6 +27,7 @@ const compareItem = compare.compareCart
                 <div class="px-5 border-r-gray-200 border-r-2">
                     <h2 class="text-black font-semibold text-xl py-2">Product Comparision</h2>
                     <p class="text-gray-600 text-sm font-normal text-justify">Find and select products to see the differences and similarities between them</p>
+                    
                 </div>
                 <div v-for="product in compareItem" :key="product.id" class="px-5 border-r-gray-200 border-r">
                     <div class="flex-col justify-center">
@@ -48,6 +49,36 @@ const compareItem = compare.compareCart
 
                 </div>
             </div>
+
+            <!-- table -->
+            
+            <table  class="w-full"> 
+                <tr class="grid grid-cols-5">
+                    <td class="border border-gray-200 border-l-0 pl-5 py-3">Brand</td>
+                    <div v-for="product in compareItem" :key="product.id" class=" ">
+                        <td class="w-1 text-center border border-gray-200 border-l-0 pl-5 py-3">{{ product.product.brand }}</td>
+                    </div>
+                </tr>
+                <tr class="grid grid-cols-5">
+                    <td class="border border-gray-200 border-t-0 border-l-0 pl-5 py-3">Category</td>
+                    <div v-for="product in compareItem" :key="product.id" class=" ">
+                        <td class="w-1 text-center border border-gray-200 border-t-0 border-l-0 pl-5 py-3">{{ product.product.category }}</td>
+                    </div>
+                </tr>
+                <tr class="grid grid-cols-5">
+                    <td class="border border-gray-200 border-t-0 border-l-0 pl-5 py-3">Model</td>
+                    <div v-for="product in compareItem" :key="product.id" class=" ">
+                        <td class="w-1 text-center border border-gray-200 border-t-0 border-l-0 pl-5 py-3">{{ product.product.title }}</td>
+                    </div>
+                </tr>
+                <tr class="grid grid-cols-5">
+                    <td class="border border-gray-200 border-t-0 border-l-0 pl-5 py-3">Stock</td>
+                    <div v-for="product in compareItem" :key="product.id" class=" ">
+                        <td class="w-1 text-center border border-gray-200 border-t-0 border-l-0 pl-5 py-3">{{ product.product.stock }}</td>
+                    </div>
+                </tr>
+            </table>
+            
         </div>
     </div>
    

@@ -1,7 +1,5 @@
 import{ref,reactive,computed} from 'vue'
 
-
-
 const cartStore = reactive({
     items:{},
     addItem(product){   

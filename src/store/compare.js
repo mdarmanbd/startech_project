@@ -57,12 +57,12 @@ const compare = reactive({
          item
       }
       this.compareItemsPopup = {}
-     // router.push('/compareItem')
+     router.push('/compareItem')
    },
 
-   continueButton(){
+   // continueButton(){
 
-   }
+   // }
    
     
 })

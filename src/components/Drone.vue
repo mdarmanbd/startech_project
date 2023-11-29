@@ -2,6 +2,7 @@
 import {ref,reactive,onBeforeMount} from 'vue'
 import {cartStore} from '../store/cart'
 import {compare} from '../store/compare'
+import {confirm} from '../store/confirm'
 import axios from 'axios'
 
 const products = ref([])
@@ -112,8 +113,8 @@ onBeforeMount(()=>{
                              to your product comparison!</p>
                     </div>
                     <div class="pl-3 flex gap-3">
-                        <button @click="compare.compareNowButton(item)" class="bg-blue-700 text-white text-base font-semibold px-4 pb-2 pt-1 rounded hover:bg-blue-800 hover:duration-300 hover:translate-x-1">Compare Now</button>
-                        <button @click="compare.continueButton" class=" bg-white text-blue-800 text-base font-semibold px-4 pb-2 pt-1 rounded hover:bg-blue-800 hover:text-white hover:duration-300 border-2 border-blue-800 hover:translate-x-1">Compare Now</button>
+                        <button @click="compare.compareNowButton(item)" class="bg-blue-700 text-yellow-300 text-base font-semibold px-4 pb-2 pt-1 rounded hover:bg-blue-800 hover:duration-300 hover:translate-x-1">Compare Now</button>
+                        <button @click="confirm.confirmOrderButton(item.product)"  class=" bg-white text-blue-800 text-base font-semibold px-4 pb-2 pt-1 rounded hover:bg-blue-800 hover:text-white hover:duration-300 border-2 border-blue-800 hover:translate-x-1">Comfirm Order</button>
                     </div>
                 </div>
             </div>    
