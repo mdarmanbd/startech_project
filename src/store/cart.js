@@ -1,7 +1,11 @@
 import{ref,reactive,computed} from 'vue'
+import router from '../router/router'
 
 const cartStore = reactive({
     items:{},
+    droneOrder:true,
+    cartOrder:false,
+
     addItem(product){   
         if( this.items[product.id]){
             this.items[product.id].quantity++
@@ -36,6 +40,12 @@ const cartStore = reactive({
     emptyCart(){
         this.items= {}
         this.saveCartInLocalStorage()
+    },
+    cartConfirmOrder(){
+        
+        this.droneOrder = false
+        this.cartOrder = true
+        router.push('/order')
     },
 
     saveCartInLocalStorage(){

@@ -15,7 +15,7 @@
 
 <template>
     <section class="w-full px-2">
-        <div class="px-3 py-2 bg-white rounded shadow-lg">
+        <div class="px-3 py-2 bg-white shadow-lg">
             <div class="flex pb-1 border-b">
                 <p class="bg-orange-100 w-5 text-orange-700 text-center rounded-full ">{{ cartStore.totalCartItems }}</p>
                 <h2 class="pl-2 text-black text-lg font-semibold">Order Overview</h2>

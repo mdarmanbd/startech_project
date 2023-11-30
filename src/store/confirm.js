@@ -1,5 +1,7 @@
 import {reactive} from 'vue'
 import {computed} from 'vue'
+import { cartStore } from './cart'
+import {logIN} from './login'
 import router from '../router/router'
 
 const confirm = reactive ({
@@ -15,7 +17,11 @@ const confirm = reactive ({
     wrongEmail: false,
 
     confirmOrderButton(item){
-        if(this.orderItem[item.id - 1]){
+
+        cartStore.droneOrder = true
+        cartStore.cartOrder = false
+
+        if(this.orderItem[item.id -1]){
             router.push('/order')
         }
         else{
@@ -55,6 +61,13 @@ const confirm = reactive ({
             this.wrongAddress = false
             this.wrongMobile = false
             this.wrongEmail = false
+
+            if(logIN.registerUser){         // if successfuly login
+                router.push('/profile')
+                
+            }else{                          // other wise go to the register page
+                router.push('/register')
+            }
         }
     }
 
