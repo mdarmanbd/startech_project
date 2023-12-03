@@ -6,6 +6,8 @@ import Register from '../components/Register.vue'
 import Profile from '../components/Profile.vue'
 import Drone from '../components/Drone.vue'
 import Order from '../components/Order.vue'
+import ProfileDronOrder from '../components/ProfileDronOrder.vue'
+import OrderSuccess from '../components/OrderSuccess .vue'
 import SingleProduce from '../components/SingleProduct.vue'
 import CompareItem from '../components/CompareItem.vue'
 import Gimbal from '../components/Gimbal.vue'
@@ -53,6 +55,14 @@ const routes = [
     {
         path: '/order',
         component:Order
+    },
+    {
+        path: '/profileDroneOrder',
+        component:ProfileDronOrder
+    },
+    {
+        path: '/orderSuccess',
+        component: OrderSuccess
     },
     {
         path:'/compareItem',

@@ -11,6 +11,7 @@ const confirm = reactive ({
     address: '',
     mobile: '',
     email: '',
+    comment:'',
     wrongFirstName: false,
     wrongAddress: false,
     wrongMobile: false,
@@ -38,6 +39,8 @@ const confirm = reactive ({
         return parseFloat(total)
     }),
 
+    // order page confirm order
+
     ConfirmOrder(){
 
         if(this.firstName.length == 0 || this.firstName.length < 1){
@@ -63,9 +66,9 @@ const confirm = reactive ({
             this.wrongEmail = false
 
             if(logIN.registerUser){         // if successfuly login
-                router.push('/profile')
-                
-            }else{                          // other wise go to the register page
+                router.push('/orderSuccess')
+
+            }else{                          // other wise go to the register page    
                 router.push('/register')
             }
         }

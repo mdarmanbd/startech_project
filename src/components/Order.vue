@@ -11,7 +11,7 @@ const orderItem = confirm.orderItem
 </script>
 
 <template>
-    <p class="text-gray-600 pb-2 p-5">{{ orderItem }}</p>
+    <!-- <p class="text-gray-600 pb-2 p-5">{{ orderItem }}</p> -->
     <div class="w-full px-5 py-5 bg-slate-100">
         <div class="pl-2 flex flex-col pb-2">
             <RouterLink to="/drone">

@@ -1,6 +1,7 @@
 <script setup>
- import { logIN } from '../store/login';
-
+import ProfileNav from './ProfileNav.vue';
+import { logIN } from '../store/login';
+import { profile } from '../store/profile';
  const userFName = localStorage.getItem('userFirstName')
  const userLtName = localStorage.getItem('userLastName')
 const userFirstname = JSON.parse(userFName)
@@ -51,75 +52,79 @@ const userLastName = JSON.parse(userLtName)
                     </div>
                 </div>
             </div>
-            <div class="grid grid-cols-4 gap-2 py-3">
-                <div class="bg-white border text-center rounded shadow-lg cursor-pointer  hover:border-blue-400">
-                    <div class="w-full text-center p-10 mx-auto">
-                        <div class=" ">
-                            <img src="../assets/Order.svg" class="rounded-full bg-blue-200 w-12 p-1 mx-auto">
+            <div v-if="profile.orderStatus" class="">
+                <div @click="profile.order" class="grid grid-cols-4 gap-2 py-3">
+                    <div  class="bg-white border text-center rounded shadow-lg cursor-pointer  hover:border-blue-400">
+                        <div class="w-full text-center p-10 mx-auto">
+                            <div class=" ">
+                                <img src="../assets/Order.svg" class="rounded-full bg-blue-200 w-12 p-1 mx-auto">
+                            </div>
+                            <p class="text-base text-black font-semibold pt-1 text-center">Order</p>
                         </div>
-                        <p class="text-base text-black font-semibold pt-1 text-center">Order</p>
+                    </div>
+                    <div class="bg-white border text-center rounded shadow-lg cursor-pointer  hover:border-blue-400">
+                        <div class="w-full text-center p-10 mx-auto">
+                            <div class=" ">
+                                <img src="../assets/Order.svg" class="rounded-full bg-blue-200 w-12 p-1 mx-auto">
+                            </div>
+                            <p class="text-base text-black font-semibold pt-1 text-center">Edit Profile</p>
+                        </div>
+                    </div>
+                    <div class="bg-white border text-center rounded shadow-lg cursor-pointer  hover:border-blue-400">
+                        <div class="w-full text-center p-10 mx-auto">
+                            <div class=" ">
+                                <img src="../assets/Order.svg" class="rounded-full bg-blue-200 w-12 p-1 mx-auto">
+                            </div>
+                            <p class="text-base text-black font-semibold pt-1 text-center">Change Password</p>
+                        </div>
+                    </div>
+                    <div class="bg-white border text-center rounded shadow-lg cursor-pointer  hover:border-blue-400">
+                        <div class="w-full text-center p-10 mx-auto">
+                            <div class=" ">
+                                <img src="../assets/Order.svg" class="rounded-full bg-blue-200 w-12 p-1 mx-auto">
+                            </div>
+                            <p class="text-base text-black font-semibold pt-1 text-center">Addresses</p>
+                        </div>
                     </div>
                 </div>
-                <div class="bg-white border text-center rounded shadow-lg cursor-pointer  hover:border-blue-400">
-                    <div class="w-full text-center p-10 mx-auto">
-                        <div class=" ">
-                            <img src="../assets/Order.svg" class="rounded-full bg-blue-200 w-12 p-1 mx-auto">
+                
+                <div class="grid grid-cols-4 gap-2 py-3">
+                    <div class="bg-white border text-center rounded shadow-lg cursor-pointer  hover:border-blue-400">
+                        <div class="w-full text-center p-10 mx-auto">
+                            <div class=" ">
+                                <img src="../assets/Order.svg" class="rounded-full bg-blue-200 w-12 p-1 mx-auto">
+                            </div>
+                            <p class="text-base text-black font-semibold pt-1 text-center">Wish List</p>
                         </div>
-                        <p class="text-base text-black font-semibold pt-1 text-center">Edit Profile</p>
                     </div>
-                </div>
-                <div class="bg-white border text-center rounded shadow-lg cursor-pointer  hover:border-blue-400">
-                    <div class="w-full text-center p-10 mx-auto">
-                        <div class=" ">
-                            <img src="../assets/Order.svg" class="rounded-full bg-blue-200 w-12 p-1 mx-auto">
+                    <div class="bg-white border text-center rounded shadow-lg cursor-pointer  hover:border-blue-400">
+                        <div class="w-full text-center p-10 mx-auto">
+                            <div class=" ">
+                                <img src="../assets/Order.svg" class="rounded-full bg-blue-200 w-12 p-1 mx-auto">
+                            </div>
+                            <p class="text-base text-black font-semibold pt-1 text-center">Save PC</p>
                         </div>
-                        <p class="text-base text-black font-semibold pt-1 text-center">Change Password</p>
                     </div>
-                </div>
-                <div class="bg-white border text-center rounded shadow-lg cursor-pointer  hover:border-blue-400">
-                    <div class="w-full text-center p-10 mx-auto">
-                        <div class=" ">
-                            <img src="../assets/Order.svg" class="rounded-full bg-blue-200 w-12 p-1 mx-auto">
+                    <div class="bg-white border text-center rounded shadow-lg cursor-pointer  hover:border-blue-400">
+                        <div class="w-full text-center p-10 mx-auto">
+                            <div class=" ">
+                                <img src="../assets/Order.svg" class="rounded-full bg-blue-200 w-12 p-1 mx-auto">
+                            </div>
+                            <p class="text-base text-black font-semibold pt-1 text-center">Star Points</p>
                         </div>
-                        <p class="text-base text-black font-semibold pt-1 text-center">Addresses</p>
+                    </div>
+                    <div class="bg-white border text-center rounded shadow-lg cursor-pointer  hover:border-blue-400">
+                        <div class="w-full text-center p-10 mx-auto">
+                            <div class=" ">
+                                <img src="../assets/Order.svg" class="rounded-full bg-blue-200 w-12 p-1 mx-auto">
+                            </div>
+                            <p class="text-base text-black font-semibold pt-1 text-center">Your Transactions</p>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="grid grid-cols-4 gap-2 py-3">
-                <div class="bg-white border text-center rounded shadow-lg cursor-pointer  hover:border-blue-400">
-                    <div class="w-full text-center p-10 mx-auto">
-                        <div class=" ">
-                            <img src="../assets/Order.svg" class="rounded-full bg-blue-200 w-12 p-1 mx-auto">
-                        </div>
-                        <p class="text-base text-black font-semibold pt-1 text-center">Wish List</p>
-                    </div>
-                </div>
-                <div class="bg-white border text-center rounded shadow-lg cursor-pointer  hover:border-blue-400">
-                    <div class="w-full text-center p-10 mx-auto">
-                        <div class=" ">
-                            <img src="../assets/Order.svg" class="rounded-full bg-blue-200 w-12 p-1 mx-auto">
-                        </div>
-                        <p class="text-base text-black font-semibold pt-1 text-center">Save PC</p>
-                    </div>
-                </div>
-                <div class="bg-white border text-center rounded shadow-lg cursor-pointer  hover:border-blue-400">
-                    <div class="w-full text-center p-10 mx-auto">
-                        <div class=" ">
-                            <img src="../assets/Order.svg" class="rounded-full bg-blue-200 w-12 p-1 mx-auto">
-                        </div>
-                        <p class="text-base text-black font-semibold pt-1 text-center">Star Points</p>
-                    </div>
-                </div>
-                <div class="bg-white border text-center rounded shadow-lg cursor-pointer  hover:border-blue-400">
-                    <div class="w-full text-center p-10 mx-auto">
-                        <div class=" ">
-                            <img src="../assets/Order.svg" class="rounded-full bg-blue-200 w-12 p-1 mx-auto">
-                        </div>
-                        <p class="text-base text-black font-semibold pt-1 text-center">Your Transactions</p>
-                    </div>
-                </div>
-            </div>
+            <!--Order nav-->
+            <ProfileNav></ProfileNav>
 
         </div>
     </section>
