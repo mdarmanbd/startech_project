@@ -1,7 +1,7 @@
 <script setup>
-import {confirm} from '../store/confirm'
-import {cartStore} from '../store/cart'
-import {profile} from '../store/profile'
+ import {confirm} from '../store/confirm'
+ import {cartStore} from '../store/cart'
+ import {profile} from '../store/profile'
 
 
 </script>
@@ -27,7 +27,7 @@ import {profile} from '../store/profile'
                                 <div class="py-2">
                                     <div class="w-full flex justify-between">
                                         <p class="text-base font-bold text-black">Sub-Total</p>
-                                        <p class="text-base font-bold text-black">{{ confirm.subTotalOrderPrice }} $</p>
+                                        <p class="text-base font-bold text-black">{{ cartStore.totalPrice }}</p>
                                     </div>
                                    
                                     <div class="w-full flex justify-between">
@@ -36,7 +36,7 @@ import {profile} from '../store/profile'
                                     </div>
                                     <div class="w-full flex justify-between">
                                         <p class="text-base font-bold text-black">Total</p>
-                                        <p class="text-base font-bold text-black">{{ confirm.subTotalOrderPrice + 60 }}</p>
+                                        <p class="text-base font-bold text-black">{{ cartStore.totalPrice + 60 }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -56,14 +56,14 @@ import {profile} from '../store/profile'
                             </div>
                         </div>
                         <!---->
-                        <div v-for="item in confirm.orderItem" class="w-11/12 m-auto flex justify-between p-3 border-b border-b-gray-300 ">
+                        <div v-for="product in cartStore.items" class="w-11/12 m-auto flex justify-between p-3 border-b border-b-gray-300 ">
                             <div class="w-1/2 flex space-x-5">
-                                <img :src="item.thumbnail" class="w-10">
-                                <p class="text-gray-600 font-semibold text-base pl-3">{{ item.title }}</p>
+                                <img :src="product.product.thumbnail " class="w-10">
+                                <p class="text-gray-600 font-semibold text-base pl-3">{{ product.product.title }}</p>
                             </div>
                             <div class="w-1/2 flex justify-end space-x-5">
-                                <p class="text-gray-600 font-semibold text-base">1</p>
-                                <p class="text-gray-600 font-semibold text-base">{{ confirm.subTotalOrderPrice + 60}}</p>
+                                <p class="text-gray-600 font-semibold text-base pr-5">{{ product.quantity }}</p>
+                                <p class="text-gray-600 font-semibold text-base">{{ product.product.price * product.quantity }}</p>
                             </div>
                         </div>
                         <!--order comment-->
@@ -75,7 +75,7 @@ import {profile} from '../store/profile'
                         </div>
                         <div class="py-3 w-11/12 m-auto">
                             <div class="flex justify-end">
-                                <button @click="profile.dronPayNow" class="text-white text-base bg-blue-800 px-3 py-1 rounded">Pay Now</button>
+                                <button @click="profile.cartPayNow" class="text-white text-base bg-blue-800 px-3 py-1 rounded">Pay Now</button>
                             </div>
                         </div>
                     </div>

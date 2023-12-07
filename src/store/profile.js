@@ -13,8 +13,22 @@ const profile = reactive({
         
     },
     dronOrder(){
-        console.log('view order')
+        // console.log('view order')
         router.push('/profileDroneOrder')
+    },
+    cartOrder(){
+        router.push('/profileCartOrder')
+    },
+    dronPayNow(){
+       
+        router.push('/payment')
+    },
+    cartPayNow(){
+        router.push('/cartPayment')
+        console.log('ihf')
+    },
+    pay(){
+        alert('order palce success')
     }
     
 })

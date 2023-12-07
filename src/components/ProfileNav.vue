@@ -75,10 +75,11 @@ import {cartStore} from '../store/cart'
                         <div class="w-1/4 flex justify-end">
                             <p class="text-lg font-semibold text-orange-500 pr-10">{{ product.product.price }}</p>
                         </div>
-                        <div class="w-1/4 flex justify-end">
-                            <button class="bg-blue-700 rounded text-white text-base px-2 py-1">View</button>
+                        <div class="w-1/4  flex justify-end ">
+                            <button @click="profile.cartOrder" class="bg-blue-700 rounded text-white text-base px-2 py-1">View</button>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>

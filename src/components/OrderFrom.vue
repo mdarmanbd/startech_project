@@ -57,7 +57,7 @@ import {confirm} from '../store/confirm'
             </div>
             <div class="pt-5">
                 <p class="text-black text-15 font-normal pb-1">Comments</p>
-                <textarea class="w-full h-20 text-15 font-normal border border-gray-300 focus:outline-none rounded px-2 py-1 text-gray-600"></textarea>
+                <textarea v-model="confirm.comment" class="w-full h-20 text-15 font-normal border border-gray-300 focus:outline-none rounded px-2 py-1 text-gray-600"></textarea>
             </div>
         </div>
     </div>

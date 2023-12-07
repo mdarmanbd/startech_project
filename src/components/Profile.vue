@@ -1,5 +1,5 @@
 <script setup>
-import ProfileNav from './ProfileNav.vue';
+import ProfileNav from '../components/profilenav.vue'
 import { logIN } from '../store/login';
 import { profile } from '../store/profile';
  const userFName = localStorage.getItem('userFirstName')

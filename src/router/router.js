@@ -7,6 +7,9 @@ import Profile from '../components/Profile.vue'
 import Drone from '../components/Drone.vue'
 import Order from '../components/Order.vue'
 import ProfileDronOrder from '../components/ProfileDronOrder.vue'
+import ProfileCartOrder from '../components/ProfileCartOrder.vue'
+import Payment from '../components/Payment.vue'
+import CartPayment from '../components/CartPayment.vue'
 import OrderSuccess from '../components/OrderSuccess .vue'
 import SingleProduce from '../components/SingleProduct.vue'
 import CompareItem from '../components/CompareItem.vue'
@@ -59,6 +62,18 @@ const routes = [
     {
         path: '/profileDroneOrder',
         component:ProfileDronOrder
+    },
+    {
+        path: '/profileCartOrder',
+        component:ProfileCartOrder
+    },
+    {
+        path:'/payment',
+        component:Payment
+    },
+    {
+        path:'/cartPayment',
+        component:CartPayment
     },
     {
         path: '/orderSuccess',
