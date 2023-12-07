@@ -7,13 +7,22 @@ import axios from 'axios'
 
 const products = ref([])
 
+
+function addTenItem(event){
+    let apiItemAdd = event.target.value
+    let apiAddNumber = Number(apiItemAdd)
+    let totalApiItem = 20 + apiAddNumber
+    console.log(totalApiItem)
+    return (totalApiItem)
+    }
+
+
 const loaded = ref()
 
 onBeforeMount(()=>{
-    axios.get('https://dummyjson.com/products?limit=20')
+    axios.get(`https://dummyjson.com/products?limit=20`)
         .then(result => {
             products.value = result.data.products
-    
         })
 })
 
@@ -56,7 +65,7 @@ onBeforeMount(()=>{
                         </div>
                         <div>
                             <label class="text-base text-black">Search : </label>
-                            <select class="text-black text-sm cursor-pointer ">
+                            <select @change="addTenItem($event)" class="text-black text-sm cursor-pointer ">
                                 <option value="10" class="text-black text-sm cursor-pointer">10</option>
                                 <option value="20" class="text-black text-sm cursor-pointer">20</option>
                                 <option value="30" class="text-black text-sm cursor-pointer">30</option>
