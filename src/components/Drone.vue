@@ -48,7 +48,7 @@ onBeforeMount(()=>{
                     </div>
                 </div>
                 <h3 class="pb-2 text-xl font-semibold text-blue-700 px-3">Best Gimbal Price in Bangladesh</h3>
-                <div class="flex flex-row gap-3 py-3 px-3">
+                <div class="w-full block space-x-1 space-y-2 sm:block sm:space-x-1 sm:space-y-2 md:space-x-0 md:space-y-0 sm:w-full md:flex lg:flex xl:flex flex-row gap-3 py-3 px-3">
                     <button class="bg-transparent rounded-full border border-gray-200 px-3 py-1 text-sm font-normal text-black">DJI</button>
                     <button class="bg-transparent rounded-full border border-gray-200 px-3 py-1 text-sm font-normal text-black">Gudsen</button>
                     <button class="bg-transparent rounded-full border border-gray-200 px-3 py-1 text-sm font-normal text-black">Zhiyan</button>
@@ -58,9 +58,9 @@ onBeforeMount(()=>{
                     <button class="bg-transparent rounded-full border border-gray-200 px-3 py-1 text-sm font-normal text-black">Leofoto</button>
                 </div>
                 <div class="w-full bg-gray-100">
-                    <div class="flex justify-between py-3 px-3">
-                        <div>
-                            <label class="text-base text-black">Search : </label>
+                    <div class="w-full flex justify-between py-3 px-1 sm:px-1 md:px-3 lg:px-3 xl:px-3">
+                        <div class="flex justify-end">
+                            <label class="text-base text-black pt-2 hidden sm:hidden md:flex lg:flex xl:flex">Search : </label>
                             <input type="text" class="outline-none focus:outline-none border-none px-2 text-sm font-medium text-black" placeholder="product name">
                         </div>
                         <div>
@@ -73,7 +73,7 @@ onBeforeMount(()=>{
                         </div>
                     </div>
                   
-                    <div class="grid grid-cols-4 gap-3 px-3">
+                    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-3 px-3">
                         <div v-for="(product,index) in products" :key="product.id" class="bg-white w-full py-3">
                             <RouterLink :to="`/drone/${product.id}`">
                                 <div class="border-b border-b-gray-200">
@@ -100,13 +100,12 @@ onBeforeMount(()=>{
                     </div>
                     
                 </div>
-            </div>
-           
+            </div>    
         </div>
-        
     </section>
+    <!---compare popup component---->
         <div v-if="compare.PopupShow" class="fixed top-0 left-0 w-full h-full z-10 bg-blackOverLay">
-            <div class="relative top-1/3 w-1/2 h-48 bg-slate-50 mx-auto rounded opacity-100">
+            <div class="relative w-11/12 sm:w-11/12 md:w-1/2 lg:w-1/2 xl:w-1/2 top-1/3 h-48 bg-slate-50 mx-auto rounded opacity-100">
                 <div class="grid grid-cols-1 p-3 w-full">
                     <div class="w-full flex justify-end">
                         <img @click="compare.closePopup" src="../assets/Close.svg" class="bg-orange-500 p-1 cursor-pointer rounded hover:bg-orange-400">

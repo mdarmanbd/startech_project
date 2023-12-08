@@ -17,7 +17,7 @@ const cart = () => {
 </script>
 
 <template>
-    <section>
+    <section class="hidden sm:hidden md:flex lg:flex xl:flex">
         <div class="relative">
             <div @click="cart" class="fixed cursor-pointer bg-blue-950 bottom-32 w-16 right-10 h-auto rounded-lg pb-3 z-10">
                 <img src="../assets/e-commerch.svg" class="w-full m-auto p-3">
