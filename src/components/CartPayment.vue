@@ -11,7 +11,7 @@ import { profile } from '../store/profile';
             <div class="pt-24">
                 <div class="bg-white rounded shadow-lg p-5 pb-6">
                     
-                    <h2 class="text-lg font-bold text-black ">Payment</h2>
+                    <h2 class="text-lg font-bold text-black ">Payment </h2>
                     <div class="pt-3">
                         <p class="text-gray-700 text-base font-semibold pb-1">Order Id </p>
                         <input value="#123abc" class="p-2 text-15 border border-gray-300 focus:outline-none rounded w-full">

@@ -72,6 +72,11 @@ const confirm = reactive ({
                 router.push('/register')
             }
         }
+    },
+
+    compareByeNow(product){
+        this.orderItem.push(product)
+        router.push('/order')
     }
 
 

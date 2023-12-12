@@ -22,7 +22,7 @@ import {useRoute,useRouter} from 'vue-router'
                 </RouterLink>
             </div>
         </div>
-        <div class="w-1/2 pt-10 mx-auto">
+        <div class="w-full sm:w-full md:w-1/2 lg:w-1/2 xl:w-1/2 pt-10 mx-auto">
             <div class="pb-4 px-5">
                 <h1 class="text-black text-lg font-semibold pb-1">Account Login</h1>
                 <div class="pb-2">

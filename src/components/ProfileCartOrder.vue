@@ -8,12 +8,12 @@
 
 <template>
     <div class="w-full bg-gray-100 h-screen">
-        <div class="w-1/2 mx-auto">
+        <div class="w-full md:w-1/2 mx-auto">
             <div class="pt-24">
                 <div class="bg-white rounded shadow-lg pt-8 pb-6 p-5">
-                    <h2 class="text-lg font-bold text-black pb-3 text-center">Order Information</h2>
+                    <h2 class="text-lg font-bold text-black pb-3 text-center">Order  Information</h2>
                     <div class="w-full">
-                        <div class="w-11/12 m-auto flex p-5 bg-gray-100 rounded">
+                        <div class="w-full md:w-11/12 m-auto flex p-5 bg-gray-100 rounded">
                             <div class="w-1/2">
                                 <h2 class="text-black text-lg font-bold">Shipping Address</h2>
                                 <div class="py-2">

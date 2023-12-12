@@ -25,7 +25,7 @@ const profile = reactive({
     },
     cartPayNow(){
         router.push('/cartPayment')
-        console.log('ihf')
+       
     },
     pay(){
         alert('order palce success')

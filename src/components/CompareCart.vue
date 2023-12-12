@@ -38,7 +38,6 @@ const CompareClose = () => {
                             <p class="pt-1 text-black text-base font-normal capitalize">{{ compareItem.product.title }}</p>
                             <img @click="compare.closeCompareItemButton(compareItem.product.id)" src="../assets/Delet.svg" class="w-6 cursor-pointer ">
                         </div>
-                       
                     </div>
                 </div>
                     <div v-if="compare.showCompareButton" class="flex gap-2 justify-start px-2 py-1 ">          

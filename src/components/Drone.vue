@@ -1,30 +1,41 @@
 <script setup>
-import {ref,reactive,onBeforeMount} from 'vue'
+import {ref,reactive,onBeforeMount, watch} from 'vue'
 import {cartStore} from '../store/cart'
 import {compare} from '../store/compare'
 import {confirm} from '../store/confirm'
 import axios from 'axios'
 
+
+
 const products = ref([])
+const searchProductTitle = ref('')
+const limit = ref(10)
 
+const fatchData = (limit) =>{
+    axios.get(`https://dummyjson.com/products?limit=${limit.value}`)
+    .then(respons=>{
+        products.value = respons.data.products
+    })
+}
 
-function addTenItem(event){
-    let apiItemAdd = event.target.value
-    let apiAddNumber = Number(apiItemAdd)
-    let totalApiItem = 20 + apiAddNumber
-    console.log(totalApiItem)
-    return (totalApiItem)
-    }
+watch(limit,(newValue,oldValue)=>{
+    // console.log(
+    //     'limit'+ limit.value,
+    //     'new Value' + newValue, 
+    //     'old Value' + oldValue
+    //     )
+    fatchData(limit)
+})
 
+// fatchData(limit).then(() =>console.log(products.value.length) )
 
-const loaded = ref()
 
 onBeforeMount(()=>{
-    axios.get(`https://dummyjson.com/products?limit=20`)
-        .then(result => {
-            products.value = result.data.products
-        })
+    fatchData(limit)
 })
+
+//console.log(searchProductTitle.value.toLowerCase())
+console.log(products)
 
 
 
@@ -47,6 +58,9 @@ onBeforeMount(()=>{
                         </RouterLink>
                     </div>
                 </div>
+
+                <!-- <p>{{ products[4].title.toLowerCase() }}</p> -->
+
                 <h3 class="pb-2 text-xl font-semibold text-blue-700 px-3">Best Gimbal Price in Bangladesh</h3>
                 <div class="w-full block space-x-1 space-y-2 sm:block sm:space-x-1 sm:space-y-2 md:space-x-0 md:space-y-0 sm:w-full md:flex lg:flex xl:flex flex-row gap-3 py-3 px-3">
                     <button class="bg-transparent rounded-full border border-gray-200 px-3 py-1 text-sm font-normal text-black">DJI</button>
@@ -61,11 +75,11 @@ onBeforeMount(()=>{
                     <div class="w-full flex justify-between py-3 px-1 sm:px-1 md:px-3 lg:px-3 xl:px-3">
                         <div class="flex justify-end">
                             <label class="text-base text-black pt-2 hidden sm:hidden md:flex lg:flex xl:flex">Search : </label>
-                            <input type="text" class="outline-none focus:outline-none border-none px-2 text-sm font-medium text-black" placeholder="product name">
+                            <input v-model="searchProductTitle" type="text" class="outline-none focus:outline-none border-none px-2 text-sm font-medium text-black" placeholder="product name">
                         </div>
                         <div>
                             <label class="text-base text-black">Search : </label>
-                            <select @change="addTenItem($event)" class="text-black text-sm cursor-pointer ">
+                            <select v-model="limit" class="text-black text-sm cursor-pointer ">
                                 <option value="10" class="text-black text-sm cursor-pointer">10</option>
                                 <option value="20" class="text-black text-sm cursor-pointer">20</option>
                                 <option value="30" class="text-black text-sm cursor-pointer">30</option>

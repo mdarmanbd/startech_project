@@ -4,7 +4,7 @@ import {confirm} from '../store/confirm'
 </script>
 
 <template>
-    <div class="w-2/5 bg-white px-4 pt-2 pb-5 rounded-md">
+    <div class="w-full sm:w-full md:w-2/5 lg:w-2/5 xl:w-2/5 bg-white px-4 pt-2 pb-5 rounded-md">
         <div class="flex gap-4 border-b pb-2">
             <p class="w-5 text-center text-orange-600 font-normal text-base bg-orange-100 rounded-full px-1 pb-1">1</p>
             <p class="text-base text-black font-medium">Customer Information</p>
@@ -12,15 +12,15 @@ import {confirm} from '../store/confirm'
                 
                 
         <div class="w-full pt-5">
-            <div class="w-full flex gap-2">
-                <div class="w-1/2">
+            <div class="w-full block sm:block md:flex gap-2">
+                <div class="w-full sm:w-full md:w-1/2 lg:w-full xl:w-full">
                     <p class="text-black text-15 font-normal pb-1">First Name</p>
-                    <input v-model="confirm.firstName" type="text" :class="confirm.wrongFirstName? 'border-red-400' : 'border-gray-300'" class="text-15 font-normal border border-gray-300 focus:outline-none rounded px-2 py-1 text-gray-600" placeholder="first name">
+                    <input v-model="confirm.firstName" type="text" :class="confirm.wrongFirstName? 'border-red-400' : 'border-gray-300'" class="text-15 font-normal border border-gray-300 focus:outline-none rounded px-2 py-1 text-gray-600 w-full" placeholder="first name">
                     <small v-if="confirm.wrongFirstName" class="text-xs text-red-500">First Name must be between 1 and 12 characters</small>
                 </div>
-                <div class="w-1/2">
+                <div class="w-full pt-5 sm:pt-5 md:pt-0 lg:pt-0 xl:pt-0 sm:w-full md:w-1/2 lg:w-full xl:w-full">
                     <p class="text-black text-15 font-normal pb-1">Last Name</p>
-                    <input v-model="confirm.lastName" type="text" class="text-15 font-normal border border-gray-300 focus:outline-none rounded px-2 py-1 text-gray-600" placeholder="Last name">
+                    <input v-model="confirm.lastName" type="text" class="text-15 font-normal border border-gray-300 focus:outline-none rounded px-2 py-1 text-gray-600 w-full" placeholder="Last name">
                 </div>
             </div>
             <div class="w-full pt-5">
@@ -38,14 +38,14 @@ import {confirm} from '../store/confirm'
                 <input type="text" v-model="confirm.email" :class="confirm.wrongEmail? 'border-red-400' : 'border-gray-300'" class="w-full text-15 font-normal border border-gray-300 focus:outline-none rounded px-2 py-1 text-gray-600" placeholder="E-mail">
                 <small v-if="confirm.wrongEmail" class="text-xs text-red-500">please input vaild email acount</small>
             </div>
-            <div class="w-full flex gap-2 pt-5">
-                <div class="w-1/2">
+            <div class="w-full sm:w-full md:flex lg:flex xl:flex space-y-4 sm:space-y-4 md:space-y-0 lg:space-y-0 xl:space-y-0 gap-2 pt-5">
+                <div class="w-full sm:w-full md:w-1/2 lg:w-1/2 xl:w-1/2">
                     <p class="text-black text-15 font-normal pb-1">City</p>
-                    <input class="text-15 font-normal border border-gray-300 focus:outline-none rounded px-2 py-1 text-gray-600" placeholder="city">
+                    <input class="text-15 font-normal border border-gray-300 focus:outline-none rounded px-2 py-1 text-gray-600 w-full" placeholder="city">
                 </div>
-                <div class="w-1/2">
+                <div class="w-full sm:w-full md:w-1/2 lg:w-1/2 xl:w-1/2">
                     <p class="text-black text-15 font-normal pb-1">Zone</p>
-                        <select class="w-30 border border-gray-300 focus:outline-none rounded px-2 py-1 text-gray-600">
+                        <select class="w-30 border border-gray-300 focus:outline-none rounded px-2 py-1 text-gray-600 w-full">
                             <option class="text-sm font-light">Dhaka City</option>
                             <option class="text-sm font-light">Khulna City</option>
                             <option class="text-sm font-light">Rajshahi City</option>

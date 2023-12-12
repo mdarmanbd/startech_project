@@ -1,5 +1,6 @@
 <script setup>
 import {compare} from '../store/compare'
+import {confirm} from '../store/confirm'
 
 const compareItem = compare.compareCart
 
@@ -19,17 +20,16 @@ const compareItem = compare.compareCart
         </div>
     </div>
 
-    <p class="px-5 pb-2">{{ compareItem}}</p>
+    <!-- <p class="px-5 pb-2">{{ compareItem}}</p> -->
 
     <div class="px-5">
         <div class="border-t-gray-200 border-t-2" >
-            <div class="grid grid-cols-5">
-                <div class="px-5 border-r-gray-200 border-r-2">
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5">
+                <div class="hidden sm:hidden md:block lg:block xl:block px-5 border-r-gray-200 border-r-2">
                     <h2 class="text-black font-semibold text-xl py-2">Product Comparision</h2>
-                    <p class="text-gray-600 text-sm font-normal text-justify">Find and select products to see the differences and similarities between them</p>
-                    
+                    <p class="text-gray-600 text-sm font-normal text-justify">Find and select products to see the differences and similarities between them</p> 
                 </div>
-                <div v-for="product in compareItem" :key="product.id" class="px-5 border-r-gray-200 border-r">
+                <div v-for="product in compareItem" :key="product.id" class=" px-5 border-r-gray-200 border-r">
                     <div class="flex-col justify-center">
                         <div class="pt-3 flex w-full">
                             <input type="text" class="border-gray-300 border-r-0 focus:shadow-none w-full">
@@ -46,37 +46,48 @@ const compareItem = compare.compareCart
                             </p>
                         </div>
                     </div>
-
                 </div>
             </div>
-
             <!-- table -->
-            
             <table  class="w-full"> 
-                <tr class="grid grid-cols-5">
-                    <td class="border border-gray-200 border-l-0 pl-5 py-3">Brand</td>
+                <tr class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5">
+                    <td class="hidden sm:hidden md:flex lg:flex xl:flex border border-gray-200 border-l-0 pl-5 py-3">Brand</td>
                     <div v-for="product in compareItem" :key="product.id" class=" ">
+                        <p class=" w-full border-t py-1 flex sm:flex md:hidden lg:hidden xl:hidden justify-center text-xl text-gray-900 bg-gray-100 capitalize ">Brand</p>
                         <td class="w-1 text-center border border-gray-200 border-l-0 pl-5 py-3">{{ product.product.brand }}</td>
                     </div>
                 </tr>
-                <tr class="grid grid-cols-5">
-                    <td class="border border-gray-200 border-t-0 border-l-0 pl-5 py-3">Category</td>
+                <tr class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5">
+                    <td class="hidden sm:hidden md:flex lg:flex xl:flex border border-gray-200 border-l-0 pl-5 py-3">Category</td>
                     <div v-for="product in compareItem" :key="product.id" class=" ">
+                        <p class=" w-full border-t py-1 flex sm:flex md:hidden lg:hidden xl:hidden justify-center text-xl text-gray-900 bg-gray-100 capitalize ">Category</p>
                         <td class="w-1 text-center border border-gray-200 border-t-0 border-l-0 pl-5 py-3">{{ product.product.category }}</td>
                     </div>
                 </tr>
-                <tr class="grid grid-cols-5">
-                    <td class="border border-gray-200 border-t-0 border-l-0 pl-5 py-3">Model</td>
+                <tr class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5">
+                    <td class="hidden sm:hidden md:flex lg:flex xl:flex border border-gray-200 border-l-0 pl-5 py-3">Model</td>
                     <div v-for="product in compareItem" :key="product.id" class=" ">
+                        <p class=" w-full border-t py-1 flex sm:flex md:hidden lg:hidden xl:hidden justify-center text-xl text-gray-900 bg-gray-100 capitalize ">Model</p>
                         <td class="w-1 text-center border border-gray-200 border-t-0 border-l-0 pl-5 py-3">{{ product.product.title }}</td>
                     </div>
                 </tr>
-                <tr class="grid grid-cols-5">
-                    <td class="border border-gray-200 border-t-0 border-l-0 pl-5 py-3">Stock</td>
+                <tr class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5">
+                    <td class="hidden sm:hidden md:flex lg:flex xl:flex border border-gray-200 border-l-0 pl-5 py-3">Stock</td>
                     <div v-for="product in compareItem" :key="product.id" class=" ">
+                        <p class=" w-full border-t py-1 flex sm:flex md:hidden lg:hidden xl:hidden justify-center text-xl text-gray-900 bg-gray-100 capitalize ">Stock</p>
                         <td class="w-1 text-center border border-gray-200 border-t-0 border-l-0 pl-5 py-3">{{ product.product.stock }}</td>
                     </div>
                 </tr>
+                <tr class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5">
+                    <td class="hidden sm:hidden md:flex lg:flex xl:flex border border-t-0 border-gray-200 border-l-0 pl-5 py-3"> </td>
+                    <div v-for="product in compareItem" :key="product.id">
+                        <td class="w-full flex justify-center py-2 pt-3 border-r ">
+                            <Button @click="confirm.compareByeNow(product.product)" class="bg-blue-600 text-white px-3 py-1 rounded w-3/4 text-center">Buy Now</Button>
+                        </td>
+                    </div>
+                    
+                </tr>
+                
             </table>
             
         </div>
