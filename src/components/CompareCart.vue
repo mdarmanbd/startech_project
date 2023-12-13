@@ -22,7 +22,7 @@ const CompareClose = () => {
                     <p class="pb-2 text-xs font-normal text-center text-white px-1">Compare</p> 
                 </div>
                 <div class="bg-orange-500 w-6 rounded-full absolute -top-2 -right-1">
-                    <p class="text-white text-center text-lg font-bold">{{ compare.compareItemCount }}</p> 
+                    <p class="text-white text-center text-lg font-bold">{{ compare.compareItemCount }} </p> 
                 </div>
             </div>
             <!--compare side bar--->

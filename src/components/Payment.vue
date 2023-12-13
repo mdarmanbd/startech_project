@@ -1,6 +1,7 @@
 <script setup>
 import {confirm} from '../store/confirm'
 import {profile} from '../store/profile'
+import {payment} from '../store/payment'
 
 </script>
 
@@ -10,7 +11,7 @@ import {profile} from '../store/profile'
             <div class="pt-10 sm:pt-10 md:pt-24 lg:pt-24 xl:pt-24">
                 <div class="bg-white rounded shadow-lg p-5 pb-6">
                     
-                    <h2 class="text-lg font-bold text-black ">Payment kk</h2>
+                    <h2 class="text-lg font-bold text-black ">Payment compare</h2>
                     <div class="pt-3">
                         <p class="text-gray-700 text-base font-semibold pb-1">Order Id </p>
                         <input value="#123abc" class="p-2 text-15 border border-gray-300 focus:outline-none rounded w-full">
@@ -32,7 +33,7 @@ import {profile} from '../store/profile'
                         </select>
                     </div>
                     <div class="w-full pt-3 ">
-                        <button @click="profile.pay" class="w-full text-white text-base font-semibold bg-blue-700 px-3 py-1 pb-2 text-center rounded">Pay</button>
+                        <button @click="payment.comparePayment" class="w-full text-white text-base font-semibold bg-blue-700 px-3 py-1 pb-2 text-center rounded">Pay</button>
                     </div>
                 </div>
             </div>

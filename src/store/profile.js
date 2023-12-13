@@ -13,7 +13,6 @@ const profile = reactive({
         
     },
     dronOrder(){
-        // console.log('view order')
         router.push('/profileDroneOrder')
     },
     cartOrder(){
@@ -27,9 +26,10 @@ const profile = reactive({
         router.push('/cartPayment')
        
     },
-    pay(){
-        alert('order palce success')
-    }
+
+    // pay(){
+    //     alert('order palce success')
+    // }
     
 })
 

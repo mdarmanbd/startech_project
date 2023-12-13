@@ -4,6 +4,7 @@ import ReaponsiveSideBar from '../components/ReaponsiveSideBar.vue';
 import CompareCart from '../components/CompareCart.vue';
 import Cart from '../components/Cart.vue';
 import { logIN } from '../store/login';
+import { cartStore } from '../store/cart';
 import {register} from '../store/register';
 
 let sideBar = ref(false)
@@ -29,7 +30,7 @@ const navThreeBar = () =>{
                 <div class="">
                     <div class="">
                         <img class="absolute right-5" src="../assets/e-commerch.svg">
-                        <samp class="relative -top-3 left-2 bg-orange-600 rounded py-0 px-1 text-center text-white text-sm">0</samp>
+                        <samp @click="cartStore.responsiveCartIcon" class="relative -top-3 left-2 bg-orange-600 rounded py-0 px-1 text-center text-white text-sm">{{ cartStore.totalCartItems }}</samp>
                     </div>
                 </div>
             </div>

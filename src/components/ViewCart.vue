@@ -6,9 +6,7 @@ import { cartStore } from '../store/cart';
 
 <template>
     <section class="w-full bg-slate-100 py-3 px-3">
-        
         <p class="py-2 text-base text-black font-semibold">Checkout</p>
-    
         <OrderOverview></OrderOverview>
         <div class="bg-white mx-2 py-3 px-3">
             <h1 class="text-xl font-semibold text-black">What would you like to do next?</h1>
