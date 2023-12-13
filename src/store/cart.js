@@ -5,8 +5,14 @@ const cartStore = reactive({
     items:{},
     droneOrder:true,
     cartOrder:false,
+    CartPopupShow : false,
+    cartItemsPopup:{},
 
-    addItem(product){   
+    addItem(product){  
+
+        this.CartPopupShow = !this.CartPopupShow
+        this.cartItemsPopup = {product}
+
         if( this.items[product.id]){
             this.items[product.id].quantity++
         }else{
@@ -18,6 +24,15 @@ const cartStore = reactive({
         
         this.saveCartInLocalStorage()
     },
+    cartClosePopup(){
+        this.CartPopupShow = !this.CartPopupShow
+    },
+
+    viewCart(){
+        router.push('/viewCart')
+    },
+
+
      deletItem(product){
         delete this.items[product]
     },

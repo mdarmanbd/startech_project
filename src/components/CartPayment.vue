@@ -7,7 +7,7 @@ import { profile } from '../store/profile';
 
 <template>
     <div class="w-full bg-gray-100 h-screen">
-        <div class="w-1/2 mx-auto  ">
+        <div class="w-11/12 sm:w-11/12 md:w-1/2 lg:w-1/2 xl:w-1/2 mx-auto  ">
             <div class="pt-24">
                 <div class="bg-white rounded shadow-lg p-5 pb-6">
                     

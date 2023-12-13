@@ -81,7 +81,7 @@ const orderItem = confirm.orderItem
                         </div>
                     </div>
                 </div>
-                <div class="w-11/12 mx-auto bg-white rounded">
+                <div class="w-full sm:w-full md:w-11/12 lg:w-11/12 xl:w-11/12 mx-auto bg-white rounded">
                     <div class="p-5">
                         <div class="flex gap-4 border-b pb-2">
                             <p class="w-5 text-center text-orange-600 font-normal text-base bg-orange-100 rounded-full px-1 pb-1">4</p>
@@ -110,18 +110,18 @@ const orderItem = confirm.orderItem
                                             </div>
                                         </div>
                                         <div class="w-1/5">
-                                            <div class="border-b border-b-gray-300 pb-2 bg-white text-center p-1 sm:p-1 md:p-1 lg:p-3 xl:p-3">
+                                            <div class="border-b border-b-gray-300 pb-2 bg-white p-1 sm:p-1 md:p-1 lg:p-3 xl:p-3">
                                                 <h2 class="text-15 sm:text-15 md:text-lg lg:text-lg xl:text-lg font-normal text-black">{{ product.price }} * 1</h2>
                                             </div>
                                         </div>
                                         <div class="w-1/5">
-                                            <div class="border-b border-b-gray-300 pb-2 bg-white p-1 sm:p-1 md:p-1 lg:p-3 xl:p-3 text-center">
+                                            <div class="border-b border-b-gray-300 pb-2 bg-white p-1 sm:p-1 md:p-1 lg:p-3 xl:p-3">
                                                 <h2 class="text-15 sm:text-15 md:text-lg lg:text-lg xl:text-lg font-normal text-black">{{ product.price }}</h2>
                                             </div>
                                         </div>
                                     </div>
                                     <div  v-if="confirm.subTotalOrderPrice > 10" class="w-full flex justify-end sm:justify-end">
-                                        <div class="w-1/4 md:w-1/4 lg:w-3/5 xl:w-3/5">
+                                        <div class="w-1/4 sm:w-1/4 md:w-1/4 lg:w-3/5 xl:w-3/5">
 
                                         </div>
                                         <div class="w-1/2 sm:w-1/2 md:w-1/2 lg:w-1/4 xl:w-1/4">
@@ -152,51 +152,50 @@ const orderItem = confirm.orderItem
                                 <div v-if="cartStore.cartOrder" class="">
                                     <div v-for="item in cartStore.items" :key="item.id" class="w-full flex">
                                         <div class="w-3/5">
-                                            <div class="border-b border-b-gray-300 pb-2 bg-white p-3">
-                                                <h2 class="text-lg font-normal text-black">{{ item.product.title }}</h2>
+                                            <div class="border-b border-b-gray-300 pb-2 bg-white p-1 sm:p-1 pl-3 sm:pl-3 md:pl-0 md:p-1 lg:p-3 xl:p-3">
+                                                <h2 class="ttext-15 sm:text-15 md:text-lg lg:text-lg xl:text-lg font-normal text-black">{{ item.product.title }}</h2>
                                             </div>
                                         </div>
                                         <div class="w-1/5">
-                                            <div class="border-b border-b-gray-300 pb-2 bg-white p-3">
-                                                <h2 class="text-lg font-normal text-black">{{ item.product.price }} * {{ item.quantity }}</h2>
+                                            <div class="border-b border-b-gray-300 pb-2 bg-white p-1 sm:p-1 md:p-1 lg:p-3 xl:p-3">
+                                                <h2 class="text-15 sm:text-15 md:text-lg lg:text-lg xl:text-lg font-normal text-black">{{ item.product.price }} * {{ item.quantity }}</h2>
                                             </div>
                                         </div>
                                         <div class="w-1/5">
-                                            <div class="border-b border-b-gray-300 pb-2 bg-white p-3">
-                                                <h2 class="text-lg font-normal text-black">{{ item.product.price * item.quantity }}</h2>
+                                            <div class="border-b border-b-gray-300 pb-2 bg-white p-1 sm:p-1 md:p-1 lg:p-3 xl:p-3 ">
+                                                <h2 class="text-15 sm:text-15 md:text-lg lg:text-lg xl:text-lg font-normal text-black">{{ item.product.price * item.quantity }}</h2>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="w-full flex">
-                                        <div class="w-3/5">
+                                    <div class="w-full flex justify-end sm:justify-end  ">
+                                        <div class="w-1/4 sm:w-1/4 md:w-1/4 lg:w-3/5 xl:w-3/5">
 
                                         </div>
-                                        <div class="w-1/5">
-                                            <div class="border-b border-b-gray-300 pb-2 bg-white p-3">
+                                        <div class="w-1/2 sm:w-1/2 md:w-1/2 lg:w-1/4 xl:w-1/4">
+                                            <div class="border-b border-b-gray-300 bg-white p-3">
                                                 <h2 class="text-lg font-normal text-black">Sub-Total :</h2>
                                             </div>
-                                            <div class="border-b border-b-gray-300 pb-2 bg-white p-3">
-                                                <h2 class="text-lg font-normal text-black">Home Delivery :</h2>
+                                            <div class="border-b border-b-gray-300 bg-white p-3">
+                                                <h2 class="text-base sm:text-base md:text-lg lg:text-lg xl:text-lg font-normal text-black">Delivery :</h2>
                                             </div>
-                                            <div class="border-b border-b-gray-300 pb-2 bg-white p-3">
+                                            <div class="border-b border-b-gray-300 bg-white p-3">
                                                 <h2 class="text-lg font-normal text-black">Total :</h2>
                                             </div>
                                         </div>
-                                        <div class="w-1/5">
-                                            <div class="border-b border-b-gray-300 pb-2 bg-white p-3">
-                                                <h2 class="text-lg font-normal text-orange-500">{{ cartStore.totalPrice }} </h2>
+                                        <div class="w-fit sm:w-fit md:w-fit lg:w-1/4 xl:w-1/4 ">
+                                            <div class="border-b border-b-gray-300 bg-white p-3 ">
+                                                <h2 class="text-lg font-normal text-orange-500 p-0 sm:p-0 md:p-0 lg:pl-4 xl:pl-4">{{ cartStore.totalPrice }} </h2>
                                             </div>
-                                            <div class="border-b border-b-gray-300 pb-2 bg-white p-3">
-                                                <h2 class="text-lg font-normal text-orange-500">100</h2>
+                                            <div class="border-b border-b-gray-300 bg-white p-2 pb-3 sm:pb-3 md:pb-4 lg:pb-4 xl:pb-4">
+                                                <h2 class="text-lg font-normal text-orange-500 p-0 sm:p-0 md:p-0 lg:pl-4 xl:pl-4">100</h2>
                                             </div>
-                                            <div class="border-b border-b-gray-300 pb-2 bg-white p-3">
-                                                <h2 class="text-lg font-normal text-orange-500">{{ cartStore.totalPrice + 100 }}</h2>
+                                            <div class="border-b border-b-gray-300 bg-white p-2 pb-4 sm:pb-4 md:pb-4 lg:pb-4 xl:pb-4">
+                                                <h2 class="text-lg font-normal text-orange-500 p-0 sm:p-0 md:p-0 lg:pl-4 xl:pl-4">{{ cartStore.totalPrice + 100 }}</h2>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div> 

@@ -50,7 +50,7 @@
                     <div class="bg-white py-2 px-2 w-full flex justify-between border-b">
                         <p class="text-gray-700 text-base font-medium w-10/12"></p>
                         <div class="w-full flex justify-around">
-                            <p class="text-orange-600 text-base font-medium w-full text-left pl-2">Home Delivery:</p>
+                            <p class="text-orange-600 text-base font-medium w-full text-left pl-2">Delivery:</p>
                             <p class="text-orange-600 text-base font-medium w-full text-left pl-2">60</p>
                         </div>
                     </div>
