@@ -33,7 +33,13 @@ import {payment} from '../store/payment'
                         </select>
                     </div>
                     <div class="w-full pt-3 ">
-                        <button @click="payment.comparePayment" class="w-full text-white text-base font-semibold bg-blue-700 px-3 py-1 pb-2 text-center rounded">Pay</button>
+
+                        <div v-if="payment.comparePayButton">
+                            <button @click="payment.comparePayment" class="w-full text-white text-base font-semibold bg-blue-700 px-3 py-1 pb-2 text-center rounded">Pay</button>
+                        </div>
+                        <div v-if="payment.disableComparePayButton">
+                            <button class="w-full bg-blue-500 text-white px-4 py-2 rounded disabled:opacity-50 disabled:cursor-not-allowed" disabled>Pay</button>
+                        </div>
                     </div>
                 </div>
             </div>

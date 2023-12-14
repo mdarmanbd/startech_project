@@ -9,6 +9,18 @@ const products = ref([])
 const searchProductTitle = ref('')
 const limit = ref(10)
 
+// search api
+function searchFatchData(searchProductTitleLowerCase){
+    axios.get(`https://dummyjson.com/products/search?q=${searchProductTitleLowerCase}`)
+    .then(respons=>{
+        products.value = respons.data.products
+       // console.log(products.value[1].title)
+        console.log(searchProductTitleLowerCase)
+    })
+}
+
+
+// all proiduct list api
 const fatchData = (limit) =>{
     axios.get(`https://dummyjson.com/products?limit=${limit.value}`)
     .then(respons=>{
@@ -17,6 +29,11 @@ const fatchData = (limit) =>{
 
     })
 }
+
+watch(searchProductTitle,(newTitle,oldTitle)=>{
+    const searchProductTitleLowerCase = searchProductTitle.value.toLowerCase()
+    searchFatchData(searchProductTitleLowerCase)
+})
 
 watch(limit,(newValue,oldValue)=>{
     fatchData(limit)

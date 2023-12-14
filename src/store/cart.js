@@ -1,6 +1,7 @@
 import{ref,reactive,computed} from 'vue'
 import router from '../router/router'
 import { compare } from './compare'
+import { payment } from './payment'
 
 const cartStore = reactive({
     items:{},
@@ -9,12 +10,12 @@ const cartStore = reactive({
     CartPopupShow : false,
     cartItemsPopup:{},
     cartShow:false,
-  //  cartOrder:false,
 
     addItem(product){ 
         compare.compareOrder = false 
         this.cartOrder = true
-
+        payment.cartPayButton = true
+        payment.disableCartPayButton = false
         this.CartPopupShow = !this.CartPopupShow
         this.cartItemsPopup = {product}
 
@@ -39,7 +40,6 @@ const cartStore = reactive({
 
     responsiveCartIcon(){
         this.cartShow = !this.cartShow
-       // console.log(this.cartShow)
     },
 
      deletItem(product){
