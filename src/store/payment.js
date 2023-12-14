@@ -1,29 +1,26 @@
 import {reactive} from 'vue'
-
 import {cartStore} from './cart'
 import {compare} from './compare'
 
 const payment = reactive({
 
     comparePayment(){
-       // console.log('comapre')
+        console.log('comapre')
+        compare.compareOrder = false
+        cartStore.cartOrder = false
         compare.compareCart = {}
         cartStore.items = {}
-      
-    //   compare.compareItems = 0
-    //   compare.compareItemsPopup = 0
-      // cartStore.totalCartItems = {}
-      // compare.compareItemCount = 0
+        compare.compareItemCount = 0;
+       
     },
     cartPayment(){
-      //  console.log('cart')
+        console.log('cart')
+        compare.compareOrder = false
+        cartStore.cartOrder = false
         cartStore.items = {}
         compare.compareCart = {}
+        compare.compareItemCount = 0;
       
-    //    compare.compareItems = 0
-    //    compare.compareItemsPopup = 0
-       // cartStore.totalCartItems = {}
-       // compare.compareItemCount = 0
     }
 })
 

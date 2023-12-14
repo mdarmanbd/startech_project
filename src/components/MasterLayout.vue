@@ -20,10 +20,9 @@ const navThreeBar = () =>{
     <nav class="px-2 py-3 w-full">
         <div class="w-full">
             <div class="flex sm:flex md:flex lg:hidden xl:hidden justify-between px-2 w-full">
-                <div @click="navThreeBar" class="cursor-pointer">
+                <div @click="navThreeBar" class="cursor-pointer ">
                     <svg width="40px" height="40px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#FCFAFA"><path fill-rule="evenodd" clip-rule="evenodd" d="M14 5H2V3h12v2zm0 4H2V7h12v2zM2 13h12v-2H2v2z"/></svg>
                 </div>
-                
                 <div class="">
                    <RouterLink to="/"><img class="w-20" src="https://www.startech.com.bd/image/catalog/logo.png"></RouterLink> 
                 </div>

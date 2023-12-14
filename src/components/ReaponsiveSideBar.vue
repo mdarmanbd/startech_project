@@ -30,11 +30,11 @@ const sideBarMonitor = () =>{
 </script>
 
 <template>
-    <div v-if="modelValue" class="w-full  h-screen">
-        <div class="bg-white p-1">
+    <div v-if="modelValue" class="w-full h-screen transition duration-700">
+        <div class="bg-white p-1 ">
             <div class="w-full px-1 border-b pb-1">
                 <div class="flex justify-between">
-                    <p class="text-black font-normal text-base">Desktop</p>
+                    <p class="text-black font-normal text-base">Desktop </p>
                     <img v-if="!plusIcon" @click="sideBarDesktop" src="../assets/plus.svg" alt="">
                     <img v-else @click="sideBarDesktop" src="../assets/minus.svg"> 
                 </div>

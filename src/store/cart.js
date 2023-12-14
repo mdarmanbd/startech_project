@@ -39,7 +39,7 @@ const cartStore = reactive({
 
     responsiveCartIcon(){
         this.cartShow = !this.cartShow
-        console.log(this.cartShow)
+       // console.log(this.cartShow)
     },
 
      deletItem(product){

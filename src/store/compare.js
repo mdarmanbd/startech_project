@@ -10,7 +10,7 @@ const compare = reactive({
    compareCart:{},
    compareItemsPopup:{},
    compareItems:{},
-   compareItemCount: 0,
+   compareItemCount:2,
    compareOrder: false,
 
     comparePopup(product){
