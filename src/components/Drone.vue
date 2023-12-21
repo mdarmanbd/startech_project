@@ -14,27 +14,36 @@ function searchFatchData(searchProductTitleLowerCase){
     axios.get(`https://dummyjson.com/products/search?q=${searchProductTitleLowerCase}`)
     .then(respons=>{
         products.value = respons.data.products
-       // console.log(products.value[1].title)
-        console.log(searchProductTitleLowerCase)
+       
     })
 }
 
-
-// all proiduct list api
+// all proiducts api
 const fatchData = (limit) =>{
     axios.get(`https://dummyjson.com/products?limit=${limit.value}`)
     .then(respons=>{
         products.value = respons.data.products
-       // console.log(products.value[4].title.toLowerCase())
-
     })
 }
 
+// search with brand name
+function brandName(event){
+    const brandName = event.target.value
+    axios.get(`https://dummyjson.com/products/search?q=${brandName}`)
+    .then(respons=>{
+        products.value = respons.data.products
+        console.log(products.value)
+    })
+}
+
+
+// search watch
 watch(searchProductTitle,(newTitle,oldTitle)=>{
     const searchProductTitleLowerCase = searchProductTitle.value.toLowerCase()
     searchFatchData(searchProductTitleLowerCase)
 })
 
+// all product api
 watch(limit,(newValue,oldValue)=>{
     fatchData(limit)
 })
@@ -79,6 +88,17 @@ onBeforeMount(()=>{
                         <div class="flex justify-end">
                             <label class="text-base text-black pt-2 hidden sm:hidden md:flex lg:flex xl:flex">Search : </label>
                             <input v-model="searchProductTitle" type="text" class="outline-none focus:outline-none border-none px-2 text-sm font-medium text-black" placeholder="product name">
+                            <!--search by brand name-->
+                            <div class="hidden sm:hidden md:hidden lg:block xl:block pl-2">
+                                <label class="text-base text-black">Brand : </label>
+                                <select @change="brandName($event)" class="text-black text-sm cursor-pointer rounded">
+                                    <option value="Apple" class="text-black text-sm cursor-pointer">Apple</option>
+                                    <option value="Samsung" class="text-black text-sm cursor-pointer">Samsung</option>
+                                    <option value="Huawei" class="text-black text-sm cursor-pointer">Huawei</option>
+                                    <option value="Oppo" class="text-black text-sm cursor-pointer">Oppo</option>
+                                    <option value="Hp" class="text-black text-sm cursor-pointer">Hp</option>
+                                </select>
+                            </div>
                         </div>
                         <div>
                             <label class="text-base text-black">Search : </label>
