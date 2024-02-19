@@ -8,7 +8,7 @@
         <div class="pt-3">
             <div class="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 xl:grid-cols-8 lg:grid-cols-8 gap-3">
                 <RouterLink to="/drone">
-                    <div class="bg-white w-full text-center rounded py-3">
+                    <div class="w-full text-center rounded py-3 bg-green-200">
                         <img class="w-3/5 mx-auto px-5" src="https://www.startech.com.bd/image/cache/catalog/category-thumb/drone-48x48.png" alt="dron.jpg">
                         <p class="text-black font-medium text-sm pt-3 hover:text-orange-500">Drone</p>
                     </div>
